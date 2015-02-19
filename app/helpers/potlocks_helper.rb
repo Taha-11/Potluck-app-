@@ -1,0 +1,2 @@
+module PotlocksHelper
+end

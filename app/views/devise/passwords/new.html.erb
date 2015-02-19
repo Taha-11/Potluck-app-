@@ -1,0 +1,25 @@
+
+
+	<div id= "bar">
+  <%= link_to "Log in", new_session_path(resource_name), class: "sign-up-link-log-in-link" %>
+</div>
+
+  
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+   
+    <%= f.email_field :email, autofocus: true, placeholder: "email adress",  class: "email"%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions",class: "btn btn-default sign-up " %>
+  </div>
+   <%= render "devise/shared/links" %>
+<% end %>
+
+
+
+

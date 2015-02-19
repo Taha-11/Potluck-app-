@@ -1,0 +1,14 @@
+class Campain 
+
+accpets_nested_attributes_for :reward_levels
+reject_if: lambda {|x|
+ x [:amount].blank? &&
+ x [:title].blank?
+ }
+
+def create 
+
+on the params line 
+{reward_levels_attributes: [:title,..,...,...]}
+
+   4.times { question.answers.build }
