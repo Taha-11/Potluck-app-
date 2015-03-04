@@ -1,3 +1,8 @@
 class Potlock < ActiveRecord::Base
-   mount_uploader :image, ImageUploader
+  belongs_to :user
+  geocoded_by :address
+  after_validation :geocode
+  has_many :items, :dependent => :destroy
+  
+  
 end

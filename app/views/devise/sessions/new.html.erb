@@ -7,14 +7,16 @@
 
    <%= link_to "Sign up", new_registration_path(resource_name), class: "sign-up-link-log-in-link" %>
    <%= link_to "Log in", new_session_path(resource_name), class: "sign-up-link-log-in-link2" %>
+    <%= link_to "Log in with facebook ", user_omniauth_authorize_path(provider: :facebook), class: "sign-up-link-log-in-link2" %>
   </div>
 
- 
+  <div class="row">
+    <div class="col-xs-12">
      <div id="background-image">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.email_field :email, autofocus: true, placeholder: "email address",  class: "email" %>
-      </div>
+            </div>
 
       <div class="field">
         <%= f.password_field :password, autocomplete: "off", placeholder: "password", class: "password" %>
@@ -33,6 +35,6 @@
       <%= render "devise/shared/links" %>
     <% end %>
 
-   
+   </div>
   </div>
- 
+ </div>

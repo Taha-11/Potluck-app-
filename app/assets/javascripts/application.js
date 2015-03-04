@@ -10,21 +10,50 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
 //= require jquery_ujs
+//= require underscore
+//= require gmaps/google
 //= require turbolinks
 //= require_tree .
 
+
+
+$(function() {
+  $('.button-to-add-photo').click(function() {
+    $(this).parents('form').first().submit()
+  })
+})
+
+
 $(document).ready(function(){
-  $('.NEW').click(function(){
+  $('.image_template2 img').click(function () {
+    $('.image_template3 img').add($('.divOverlay')).fadeIn();
+});
+  $('.image_template3 img').add($('.divOverlay')).click(function () {
+    $('.image_template3 img').add($('.divOverlay')).fadeOut(); 
+});
 
-    $('#create').toggle();
-    $('.new-potluck').toggle();
+ 
+   $('#create').one("click",function(){
+    $('#create').animate({
+      height: '+=40px'},100);
+
+    });
+   $('#create').one("click",function(){
+    $('.slide-icon img').toggle(0);
+  });
+    $('.slide-icon').one("click",function(){
+    $('#create').animate({
+      height: '-=40px'},100)
+    });
+    $('.slide-icon').one("click",function(){
+           $('.slide-icon').toggle(0);
    });
-
+    
 });
 
 
- 
-
+  
 

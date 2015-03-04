@@ -1,0 +1,13 @@
+<%= render partial: 'items/form', locals: { item: @item } %>
+
+
+     <div id="side-bar2">
+              <% form_tag user_session_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+  
+     </div>
+     

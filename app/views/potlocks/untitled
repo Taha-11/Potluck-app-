@@ -1,0 +1,14 @@
+<!--      <div class="added-friends">
+       <%# if friendship.friend %>
+         <%= friendship.friend.first_name%>
+       </div>
+         <div class="image_template">
+         <%# if friendship.friend.image %>
+           <%=  image_tag user.image.image.url %>
+         <%# end%>
+       </div>
+         <%#= friendship.friend.first_name if friendship.friend %></br>
+         <%#= link_to "unfriend",friendship, :method => :delete %></br>
+      <%# end %> 
+
+   </div>

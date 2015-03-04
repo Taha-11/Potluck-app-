@@ -1,43 +1,219 @@
 <link href='http://fonts.googleapis.com/css?family=Raleway:400,600,800' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Indie+Flower&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+ <div class="divOverlay">
+</div>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
 <div id= "bar">
-<%=link_to "Log out", destroy_user_session_path, :method => :delete, class: "log-out" %>
+ <div class="row">
+  <div class="col-md-12">
+  <%=link_to "Log out", destroy_user_session_path, :method => :delete, class: "log-out" %>
+  <div class="logo">
+  <img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpf1/v/t34.0-12/10994726_10155228223160080_1910018901_n.jpg?oh=3e5c4b37406b6912d10b3dd75a5e8b8e&oe=54F8A592&__gda__=1425523203_d0f2a36cb8de9038e7f1a9a99a073652">
+  </div>
+ </div>
 </div>
- <%= form_for Potlock.new do |f| %>
- <%= f.file_field :image, class: "image-browser"%>
- <%= f.submit 'add-photo', class: "add-photo"%>
- <%end%>
+
+ <div class="image_template2">
+     
+      <% if current_user.image %>
+          <%= image_tag current_user.image.image.url(:thumb)  %>
+          <%end%>
+      </div>
+   </div>
+</div>
+</div>
 
 
- 
 
- <%= form_for Potlock.new do |f| %>
-	 <div class="side-bar"></div>
-<div class="form">
+
+
+
+   <div class="side-bar">
+    <div class="profile-icon">
+      <img src="http://locate.mk/images/profile-icon.png">
+      </div>
+    <div class="image_template">               
+
+        <% if current_user.image %>
+          <%= image_tag current_user.image.image.url(:thumb) %>
+          <%= link_to "Delete Photo",current_user.image, method: :delete, class: "image-delete" %>
+           <div class="name">
+           <%= current_user.first_name%>   
+         </div>
+         <%#= current_user.email %>
+        </div>
+        <% end %>
+            <button type="button" class="btn btn-link " id="add-photo2" data-toggle="modal" data-target="#image-uploader">
+   Change your photo
+</button>
+      </div>
    
-    <div class= "NEW">
- <button > Hello </button>
+  
+  
+      <button type="button" class="btn btn-link " id="add-photo" data-toggle="modal" data-target="#image-uploader">
+         <div class="camera-logo">
+    <img src="http://www.clker.com/cliparts/O/c/P/C/o/K/white-camera-hi.png">
+  </div>
+   Add your photo
+</button>
+   
+  <div id="image-uploader" class="modal fade">
+     <%= form_for Image.new do |f| %>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"> Add your potluck photo</h4>
+      </div>
+      <div class="modal-body">
+       
+        <%= f.file_field :image, class: "image-browser"%>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-primary" value="Upload">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+  <%end%> 
+</div><!-- /.modal -->
 </div>
-         
-    <div class="new-potluck">	
-      <h2> what is ? </h2>
-      <hr>
-	<%=f.text_area :create, id: "create", placeholder: "" %> </br> 
-</div>  
-	<%=f.text_field :due_date, id: "due-date" %> </br>
-	<%=f.text_field :listing_items, class: "listing-items" %> </br>
-	<%= f.submit 'Post', class: "post"%>
+ 
+  <!--<div class= "NEW">
+    <button class="button" id="save">Make a new potluck</button>
+      
+</div> -->
+
+
+
+<%= form_for Potlock.new do |f| %>
+
+    <div class="form">
+      <h2> Start a new potluck </h2>
+      <h3> Name your potluck!</h3>
+      <div class="pen-icon">
+        <img src="http://simpleicon.com/wp-content/uploads/pen-15.png">
+        </div>
+        <%=f.text_area :create, id: "create", placeholder: "" %><hr>
+            <div class="slide-icon">
+        <img src="https://cdn1.iconfinder.com/data/icons/mobiletouch-gestures/500/up-512.png">
+  </div>
+     <div class="meal-icon">
+     <img src="http://www.amidonsolutions.com/eugenia/images/icon_dining.png
+     ">
+      </div>
+       <div class="calender-icon">
+      <img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPjSWjgGg6h0TsQjnsQ32DBgh_bDEyUfQclGA5KrigW7VJOGI8">
+     </div>
+      <%=f.date_select :due_date, class: "due-date" %> </br> 
+      <%=f.label :due_date, "Time", class: "date-label"%>
+       <%#=f.label :meal, "Meal", class: "meal-label" %> <div id="meal"> <%=f.select :meal,options_for_select(%w[Meal Breakfast Brunch Lunch Dinner ]) %> </br>
+        <div class="map-icon">
+      <img src="https://cdn4.iconfinder.com/data/icons/pictype-free-vector-icons/16/location-alt-512.png">
+      <%=f.label :address, "Place", class: "address" %> <%=f.text_area :address, placeholder: "add your address", class: "address-form" %>
+      <div class= "bottom">
+        <%= f.submit 'Create', class: "post"%>
+      </div>
+    </div>  
+     <div class="image_template3">
+      <% if current_user.image %>
+          <%= image_tag current_user.image.image.url(:thumb)  %>
+          <%end%>
+      </div>
+   </div>
+      
+  </div>
     
-    <hr size="50" >
+  </div>
+</div>
 <%end%>
 
 
+   <div class= "friends-search">
+    <h4> Find your friends </h4>
+    <%= form_tag potlocks_path, :method => 'get' do %>
+      <%= text_field_tag :friendship, @search_term %>
+      <%= submit_tag "find", :first_name  => nil, class: "find-me"%>
+  
+    <% end %>
+  </div>
+     
+    <% for user in @users %>
+      <div class="friends">
+        <div class="friend-name">
+         <%= user.first_name%></br>
+        </div>
+        <div class="image_template">
+          <% if user.image %></br>
+            <%= image_tag user.image.image.url %></br>
+          <% end %>
+        </div> 
+       
+        <div class="add-friend">
+          <%= link_to "add friend",  friendships_path(:friend_id => user.id), :method => :post %>
+          <br/>
+        </div>
+      </div>
+    <% end %>
+     
+ </div>
 
-   <% @potlocks.each do |potlock| %>
-<div class="potlock">
-   <%= potlock.create %> </br>
-   <%= image_tag potlock.image.url(:thumb) unless potlock.image.blank? %>
-</div>
-     <%= link_to "delete",potlock, method: :delete, class: "btn btn-default potlock-delete" %>  
-<% end %>
-</div>
+
+      <% current_user.friendships.each do |friendship| %>
+        <h2><%= friendship.friend && friendship.friend.first_name%> </h2>
+        
+       <% if friendship.friend %>
+         <%= friendship.friend.first_name%>
+      
+         
+         <% if friendship.friend.image %>
+           <%=  image_tag user.image.image.url %>
+         <% end%>
+       </div>
+         <%= friendship.friend.first_name if friendship.friend %></br>
+         <%= link_to "unfriend",friendship, :method => :delete %></br>
+      <%end %> 
+
+      <% end %> 
+
+	     <%#=f.text_field :listing_items, class: "listing-items" %> </br>
+      
+       
+	     
+       
+       
+
+
+   
+   
+ 
+ 
+
+
+      <script type="text/javascript">
+        $(document).ready(function(){
+         if (<%=current_user.image.blank? %>){
+                  $(".profile-icon").css("display", "block");
+                  $("#add-photo2").css("display","none");
+                    
+                  }
+                  else {
+                   
+                    $(".profile-icon").css("display","none");
+                    $("#add-photo").css("display","none");
+
+
+                  }
+                });
+        </script>
+
+
+
+
+
+
+

@@ -1,4 +1,45 @@
+#bar{
+  position: absolute;
+  margin-top: 0px;
+  width:100%;
+  height: 44px;
+  background-color:white;
+  position: fixed;
+  z-index: 10;
+  box-shadow: 0px 1px 0px rgba(111, 151, 182, 0.3) inset, 0px -1px 0px rgba(111, 151, 182, 0.1) inset, 0px 1px 1px rgba(75, 58, 69, 0.25);
+  }
+  .log-out{
+  font-size: 14px;
+  float:right;
+  margin-top: 4px;
+  color:#337AB7;
+  text-decoration: none;
+  font-family:"Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  max-width:50%;
+  padding:8px;
+  text-indent: 12px; 
+  margin-right:4%;
+ }
 
+  .image_template2 img { 
+  width:300px;
+  border-radius: 10px;
+  float:left;
+  margin-top: 40px;
+  margin-left:20px;
+  border: 4px solid white;
+}
+
+
+.logo  {
+  float:center;
+  margin-top: 12px;
+  max-width:10%;
+  margin:auto;
+}
+.logo img {
+width:80px;
+}
 .email{
   
   height: 30px;
@@ -36,25 +77,8 @@
   font-size: 15px;
   color: white;
 }
-#bar{
-	width:100%;
-  height: 40px;
-  background-color:#1A1A1A;
-  top: 0px;
-  position: fixed;
-  z-index: 10;
 
-}
-.form{
-position: relative;
-margin-left:320px;
-width:800px;
-border: 1px solid #E1FFFF;
-border-radius: 8px;
-height: 1000px;
 
-top:40px;
-}
 
 .btn.btn-default.forgot_password_button {
 	background-color: #F8584E;
@@ -101,10 +125,131 @@ top:40px;
   font-size: 20px;
   margin-left: 200px;
   font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+}
+.form{
+  position: relative;
+  display: table;
+  margin: auto;
+  top: 80px;
+   width: 40%;
+   border-radius: 5px;
+   right:35px;
+   background-color:white;
+   height:460px;
+
+}
+
+
+.address{
+
+  position: relative;
+  color: #337AB7;
+  width:50px;
+  cursor: pointer;
+  top: -100px;
+  left:280px;
+  font-size: 16px;
+}
+.address:hover{
+  color: #555459;
+}
+
+.map{
+  margin-left: 200px;
+ 
+}
+.profile-icon img{
+ width:300px;
+  border-radius: 10px;
+  float:left;
+  margin-top: -330px;
+  margin-left:2px;
+}
+.modal-header{
+  background-color: rgba(248, 140, 93, 0.39);
+}
+.modal-footer{
+    background-color: rgba(248, 140, 93, 0.39);
+}
+.modal-title{
+  color:white;
+}
+.name{
+  margin-left: 170px;
+  line-height: 1;
+   color:white;
+  font-size: 18px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  margin-top: -80px;
+}
+.image-delete{
+  position: relative;
+  font-weight: 700;
+  color:#337AB7;
+  margin-left: 167px;
+  top: -20px;
+  font-size: 12px;
+ 
  }
+ .map-icon img{
 
+ 
+  position: relative;
+  float:center;
 
+  width:38px;
+  cursor: pointer;
+  top:-132px;
+  left:330px;
 
+  
+  
+ }
+textarea.address-form{
+position: relative;
+ left: 100px; 
+ top: -50px;
+ width:300px;
+  height: 40px;
+  border: 1px solid white;
+  padding: 5px;
+  font-family: Tahoma, sans-serif;
+  font-weight: bold;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-color: #F5F8FA;
+ border: 1px solid #E1E8ED;
+ resize:none;
+ font-size: 25px;
 
+}
+textarea[placeholder] {
+   font-family:"Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif; 
+   font-size: 14px;
+  outline: none;
 
+}
+.calender-icon img{
+ 
+   position: relative;
+   width:34px;
+   cursor: pointer;
+   left:600px;
+   margin-top: 10px
+
+  
+ }
+ .date-label{
+ 
+ position: relative;
+   width:41px;
+   cursor: pointer;
+
+   left:60px;
+   top:-20px;
+   color:#337AB7;
+   font-size: 16px;
+   left:635px;
+ }
 
