@@ -9,7 +9,7 @@
   box-shadow: 0px 1px 0px rgba(111, 151, 182, 0.3) inset, 0px -1px 0px rgba(111, 151, 182, 0.1) inset, 0px 1px 1px rgba(75, 58, 69, 0.25);
   }
   .log-out{
-  font-size: 14px;
+  font-size: 16px;
   float:right;
   margin-top: 4px;
   color:#337AB7;
@@ -25,7 +25,7 @@
   width:300px;
   border-radius: 10px;
   float:left;
-  margin-top: 40px;
+  margin-top: 80px;
   margin-left:20px;
   border: 4px solid white;
 }
@@ -38,7 +38,8 @@
   margin:auto;
 }
 .logo img {
-width:80px;
+width:60px;
+margin-top: 08px
 }
 .email{
   
@@ -53,6 +54,7 @@ width:80px;
   width: 30%;
   text-align: center;
   margin-top: 10px;
+
 }
   
 #new_user {
@@ -130,12 +132,12 @@ width:80px;
   position: relative;
   display: table;
   margin: auto;
-  top: 80px;
-   width: 40%;
+  bottom: 40px;
+   width: 400px;
    border-radius: 5px;
-   right:35px;
+   right:250px;
    background-color:white;
-   height:460px;
+   height:440px;
 
 }
 
@@ -175,20 +177,21 @@ width:80px;
   color:white;
 }
 .name{
+  position: relative;
   margin-left: 170px;
   line-height: 1;
    color:white;
   font-size: 18px;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
-  margin-top: -80px;
+  bottom: 450px;
 }
 .image-delete{
   position: relative;
   font-weight: 700;
   color:#337AB7;
   margin-left: 167px;
-  top: -20px;
+  bottom: 370px;
   font-size: 12px;
  
  }
@@ -252,4 +255,8 @@ textarea[placeholder] {
    font-size: 16px;
    left:635px;
  }
-
+.bottom1{
+  border:1px solid black;
+  height: 200px;
+  bottom: 400px;
+}

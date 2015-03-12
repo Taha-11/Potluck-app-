@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users,
   controllers: {omniauth_callbacks:"users/omniauth_callbacks"}
+  resources :invitations
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -8,6 +9,9 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'potlocks#index'
   resources :potlocks do
+      resources :invites do
+    post :find, on: :collection
+  end
     resources :items do
       member do
         post :claim
@@ -17,6 +21,7 @@ Rails.application.routes.draw do
   resources :friendships do
     post :find, on: :collection
   end
+
   # resources :friendships, :collection => { :index => :get }
   resources :images
   

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
          #validates :user_id, presence: true, :uniqueness => true
           #validate :images_limit
+          validates :first_name, :email, presence: true
 
           devise :database_authenticatable, :registerable, :omniauthable,
              :recoverable, :rememberable, :trackable, :validatable
@@ -16,12 +17,16 @@ class User < ActiveRecord::Base
          has_many :potlocks
          has_many  :items
          has_many :friendships
-         has_many :friends, :through => :friendships 
-         has_many :inverse_friendships, :class_name => "Freindship", :foreign_key => "friend_id"
-         has_many :inverse_friendships, :through => :inverse_friendships, :source => :user
+         has_many :invites 
+         has_many :friends, :through => :friendships
+         has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
+         has_many :inverse_friends, :through => :inverse_friendships, :source => :user
+
+
+         
+ 
+  
      
-
-
 
 
 

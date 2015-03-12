@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302212247) do
+ActiveRecord::Schema.define(version: 20150312014807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150302212247) do
     t.integer  "friend_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "status"
   end
 
   create_table "images", force: :cascade do |t|
@@ -28,6 +29,28 @@ ActiveRecord::Schema.define(version: 20150302212247) do
     t.datetime "updated_at", null: false
     t.string   "image"
     t.integer  "user_id"
+  end
+
+  create_table "inverse_friendships", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "invitations", force: :cascade do |t|
+    t.integer  "sender_id"
+    t.string   "recipient_email"
+    t.string   "token"
+    t.datetime "sent_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "invites", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "guest_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "potlock_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -84,6 +107,7 @@ ActiveRecord::Schema.define(version: 20150302212247) do
     t.string   "uid"
     t.text     "oauth_token"
     t.datetime "oauth_expires_at"
+    t.integer  "invitation_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

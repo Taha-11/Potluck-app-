@@ -3,13 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .friends-search{
   position: relative;
-  width:300px;
-  top: -380px;
-  height: 200px;
-  left: 1260px;
-  border-radius: 8px ;
+  width:480px;
+ bottom: 490px;
+  height: 177px;
+  left: 1100px;
+  border-radius: 5px;
+  
   background-color: rgba(20, 25, 36, 0.81);
-  border: 4px solid white;
+  
 }
 .friends-search h4{
   position: relative;
@@ -28,7 +29,7 @@
   font-size: 16px;
   background-color: red;
   margin-top: 50px;
-  margin-left:40px;
+  margin-left:20px;
   resize: none;
   background-color: #F5F8FA;
   border: 1px solid #FCEAEC !important;
@@ -36,43 +37,45 @@
 
 
 .find-me {
+  display: none;
+  position: relative;
+  left:4px;
  background:none!important;
      border:none; 
      padding:0!important;
       cursor: pointer;
-      color: white;
+      color: #337AB7;
       font-size: 20px;
       font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
-
+    
  }
 
  .friends{
   position: relative;
-  left:1266px;
-  top: -380px;
-  border: 1px solid black;
+  left:1390px;
+  top: -580px;
   height: 100px;
   padding-bottom: 170px;
-  width:200px;
-  border-radius: 8px;
-
-
- }
+  width:290px;
+}
 
  .friend-name{
   position: relative;
  font-size: 18px;
- left:110px;
- top:65px;
- color: black;
+ left:90px;
+ bottom:40px;
+ color: white;
  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+ font-weight:bold;
+
 
 }
 
 .add-friend{
+  bottom: 90px;
   position: relative;
 font-size: 18px;
-left:20px;
+left:0px;
 font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
 .added-friends{
@@ -82,3 +85,20 @@ font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Ga
   top:-500px;
 
 }
+.friends-icon img{
+  position: relative;
+  width:40px;
+  top:-90px;
+  left:20px;
+}
+.image_template5 img{
+  position: relative;
+  height:80px;
+  width:80px;
+  bottom: 100px;
+
+  border-radius: 10px;
+
+  border: 2px solid #FFF;
+  position: relative;
+ }

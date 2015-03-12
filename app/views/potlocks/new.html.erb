@@ -1,3 +1,12 @@
+<div id= "bar">
+  <%=link_to "Log out", destroy_user_session_path, :method => :delete, class: "log-out" %>
+  <div class="logo">
+     <img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpf1/v/t34.0-12/10994726_10155228223160080_1910018901_n.jpg?oh=3e5c4b37406b6912d10b3dd75a5e8b8e&oe=54F8A592&__gda__=1425523203_d0f2a36cb8de9038e7f1a9a99a073652">
+    </div>
+</div>
+
+
+
 <% @potlocks.each do |potlock| %>
              <%= potlock.create %> </br>
              <%= potlock.meal %><br>
@@ -16,13 +25,31 @@
 
              
 
-      
+
           <%= link_to "delete",potlock, method: :delete, class: "btn btn-default potlock-delete" %>  
     <% end %>
 
-   
-    <div  class="map" style='width: 200px;'>
-  <div id="map" style='width: 200px; height: 200px;'></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <div  class="map" style='width: 200px;'>
+  <div id="map" style='width: 300px; height: 300px;'></div>
 </div>
 
         <script>
@@ -47,11 +74,11 @@
         });
 
 
-          if (<%= @potlocks.blank? %>) {
-              $(".map").css("display", "none");
-            }
-            else {
-              $(".map").css("display", "block");
-            }
-        });
-        </script>
+        //   if (<%= @potlocks.blank? %>) {
+        //       $(".map").css("display", "none");
+        //     }
+        //     else {
+        //       $(".map").css("display", "block");
+        //     }
+        // });
+        </script> 

@@ -17,6 +17,7 @@
 //= require gmaps/google
 //= require turbolinks
 //= require_tree .
+//= gmaps4rails/googlemaps.js
 
 
 

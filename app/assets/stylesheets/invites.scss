@@ -1,0 +1,246 @@
+// Place all the styles related to the invites controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.the-potlucks-name{
+
+  position: relative;
+  font-size: 25px;
+  bottom: 240px;
+  left:240px;
+
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+.the-date{
+  position: relative;
+  font-size: 20px;
+  color:#337AB7;
+  bottom: 225px;
+  left:300px;
+  font-family:"Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif,italic;
+}
+
+.map{
+
+  position: relative;
+  left:50px;
+  top:100px;
+}
+  .image_template6 img { 
+  width:200px;
+  border-radius: 10px;
+   left:20px;
+  border: 4px solid white;
+  position: relative;
+  top: 30px;
+}
+.the-address{
+    position: relative;
+  font-size: 20px;
+  color:#337AB7;
+bottom: 517px;
+  left:240px;
+
+  font-family:"Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif,italic;
+  ;}
+  .friends-side2{
+  position: relative;
+  width:300px;
+ top: 40px;
+  height:800px;
+  left: 1290px;
+  background-color:  rgba(248, 140, 93, 0.39);
+  border-radius: 5px;
+  position: fixed;
+  z-index: 2;
+}
+.the-name{
+  position: relative;
+  color:white;
+  font-size: 20px;
+  left:20px;
+  top:260px;
+}
+.the-calender img{
+  position: relative;
+  width:200px;
+  top:110px;
+  left:190px;
+}
+.the-meal{
+    position: relative;
+  font-size: 20px;
+  color:#337AB7;
+  bottom: 400px;
+  right:110px;
+}
+
+.the-meal-icon img{
+  position: relative;
+  width:200px;
+  left:135px;
+  top:120px;
+}
+.friends-icon3 img{
+  position: relative;
+   width:50px;
+   left:220px;
+   top:20px;
+
+}
+
+
+textarea#item_name{
+  position: relative;
+  width:700px;
+  border: 3px solid  rgba(248, 140, 93, 0.39);;
+  padding: 5px;
+  font-family: Tahoma, sans-serif;
+  font-weight: bold;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  margin-top:5px;
+  resize: none;
+  background-color: #F5F8FA;
+  left:400px;
+  height: 50px;
+  top:30px;
+  box-shadow: 10px;
+
+}
+
+ .the-form{
+
+  position: relative;
+  width:700px;
+  left:400px;
+  height: 380px;
+  top:90px;
+  background-color: white;
+ }
+
+ .invite-side{
+  position: relative;
+  width:250px;
+  top:80px;
+  left:10px;
+  height:380px;
+  background-color: #337AB7;
+  position: fixed;
+  z-index: 0;
+ }
+  .headline{
+  position: relative;
+  font-size: 15px;
+  top:80px;
+  color: orange;
+  left:20px;
+}
+.what-we-need h1{
+  position: relative;
+  font-size: 20px;
+  color: #8899A6;
+  left:400px;
+  bottom: 200px
+}
+.post2{
+  position: relative;
+  bottom: 20px;
+  left:290px;
+ background:none!important;
+     border:none; 
+     padding:0!important;
+      cursor: pointer;
+      color: black;
+      font-size: 20px;
+      font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+
+}
+#invite{
+  position: relative;
+  width:260px;
+  bottom:320px;
+  left:5px;
+  position: fixed;
+  z-index: 3;
+}
+.friends-to-invite h2{
+  position: relative;
+  bottom:240px;
+  font-size: 20px;
+  left:10px;
+  position: fixed;
+}
+ .invite-icon img {
+  position: relative;
+  width:70px;
+  bottom: 225px;
+  left:220px;
+  position: fixed;
+}
+
+ .friends2{
+  position: relative;
+  left:10px;
+  height: 100px;
+  width:290px;
+  bottom: 50px;
+  position: fixed;
+}
+.invite-requeste{
+  position: relative;
+  font-size: 20px;
+  bottom: 80px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+
+}
+.item{
+  position: relative;
+  font-size: 20px;
+  left:390px;
+top: 100px;
+font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+.select{
+  position: relative;
+  font-size: 20px;
+  left:1050px;
+  top: 40px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+.selected-by{
+  position: relative;
+  font-size: 15px;
+  left:1120px;
+  top:15px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  color: gray;
+}
+.delete-item{
+  position: relative;
+  left:420px;
+  top:100px;
+}
+.delete-potluck{
+  position: relative;
+  bottom:700px;
+  left:10px;
+  position: fixed;
+
+}
+.profile-page{
+  font-size: 15px;
+  float:right;
+  margin-top: 4px;
+  color:#337AB7;
+  text-decoration: none;
+  font-family:"Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  max-width:50%;
+  padding:8px;
+  text-indent: 12px; 
+  margin-right:20px;
+}
+.invitees h4{
+  position: relative;
+  left:210px;
+  top:20px;
+}

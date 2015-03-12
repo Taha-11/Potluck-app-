@@ -6,23 +6,29 @@ class PotlocksController < ApplicationController
     if @search_term
 		  @users = User.where('users.first_name iLIKE ?', "%#{@search_term}%")
     else
-      @users = User.all
+      @users = []
     end
 
 		@image= Image.new
 		@images= Image.all
-	end
+end
 		
-   def new
+   def show
+      @search_term = params[:invite]
+    if @search_term
+      @users = User.where('users.first_name iLIKE ?', "%#{@search_term}%")
+    else
+      @users = []
+   end 
+
    	@item = Item.new
-   	@potlocks =Potlock.all
-   	@potlock= Potlock.new
+   	@potlock= Potlock.find(params[:id])
    	@image= Image.new
 		@images= Image.all
 		@hash = Gmaps4rails.build_markers(@users) do |user, marker|
             marker.lat user.latitude
             marker.lng user.longitude
-          end
+         end 
    end
 
 	 def create
@@ -30,7 +36,7 @@ class PotlocksController < ApplicationController
 	 	@potlock =Potlock.new potlock_params
 	 	
 	 	if @potlock.save
-	 		redirect_to new_potlock_path
+	 		redirect_to @potlock
 	 	else
 	 		render 'new'
 	 	end
@@ -39,7 +45,7 @@ class PotlocksController < ApplicationController
 	 def destroy
 	 	@potlock = Potlock.find (params[:id])
 	 	@potlock.destroy
-	 	redirect_to new_potlock_path
+	 	redirect_to potlocks_path
 	 end 
 
 end  

@@ -32,6 +32,7 @@ gem 'underscore-rails'
 gem 'omniauth-facebook'
 gem "koala", "~> 1.11.0rc"
 
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

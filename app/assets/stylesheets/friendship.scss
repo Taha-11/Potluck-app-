@@ -1,3 +1,48 @@
 // Place all the styles related to the friendship controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ .image_template4 img{
+  height:60px;
+  width:60px;
+  border: 2px solid #FFF;
+  position: relative;
+  left:20px;
+ }
+ .friend-name1{
+  position: relative;
+ font-size: 14px;
+   left:100px;
+  color: white;
+ font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+ font-weight:bold;
+ top:40px;
+
+ }
+ .unfriend{
+    position: relative;
+ font-size: 12px;
+ right:180px;
+ color: white;
+ font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+ font-weight:bold;
+  left:20px;
+ 
+
+}
+.friends-side{
+  position: relative;
+  width:480px;
+  bottom: 640px;
+  height:500px;
+  left: 1100px;
+  background-color:#517FA4;
+  border-radius: 5px;
+}
+
+.friends-icon2 img{
+  position: relative;
+  width:60px;
+  top:20px;
+  left:400px;
+ }
+
