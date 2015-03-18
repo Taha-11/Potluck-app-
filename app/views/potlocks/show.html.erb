@@ -74,7 +74,8 @@
           <div class="friends-side2">
   <% current_user.invites.each do |invite| %>
              <div class="friend-name1">
-              <%= invite.guest.first_name%>
+              <%= invite.guest.full_name%>
+              <%= invite.guest.email %>
             </div>
             <div class="image_template4">
                <% if invite.guest %>
@@ -107,7 +108,7 @@
           <div class="friends2">
            <% for user in @users %>
            <%= user.first_name%><br/>
-          <div class="image_template5">
+          <div class="image_template4">
           <% if user.image %></br>
             <%= image_tag user.image.image.url %></br>
           <% end %>

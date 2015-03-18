@@ -1,38 +1,30 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.friends-search{
-  position: relative;
-  width:480px;
- bottom: 490px;
-  height: 177px;
-  left: 1100px;
-  border-radius: 5px;
-  
-  background-color: rgba(20, 25, 36, 0.81);
-  
-}
+
 .friends-search h4{
-  position: relative;
+ float:left;
  font-size: 18px;
  color: white;
- left:70px;
- top:20px;
-  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
-
+ margin-left:100px;
+font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 
 }
+
 #friendship{
-  width:200px;
+  float: left;
+  width:600px;
   border-color: #333;
-  height: 25px;
-  font-size: 16px;
+  height: 35px;
+  font-size: 24px;
   background-color: red;
-  margin-top: 50px;
-  margin-left:20px;
   resize: none;
   background-color: #F5F8FA;
   border: 1px solid #FCEAEC !important;
+  margin-left: 20px;
+  margin-top: 5px;
+  width:40%;
+
 }
 
 
@@ -40,7 +32,7 @@
   display: none;
   position: relative;
   left:4px;
- background:none!important;
+   background:none!important;
      border:none; 
      padding:0!important;
       cursor: pointer;
@@ -52,30 +44,34 @@
 
  .friends{
   position: relative;
-  left:1390px;
-  top: -580px;
-  height: 100px;
-  padding-bottom: 170px;
-  width:290px;
-}
+  height: 360px;
+  padding-bottom: 0px;
+  width:360px;
+  margin: auto;
+  bottom: 575px;
+  
+   border: 4px solid white;
+   border-radius: 10px;
+   margin-left: 700px;
+ }
 
  .friend-name{
   position: relative;
- font-size: 18px;
- left:90px;
- bottom:40px;
- color: white;
+ font-size: 24px;
+ top:363px;
+ color: black;
  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
  font-weight:bold;
+ left:10px;
 
 
 }
 
 .add-friend{
-  bottom: 90px;
+  bottom: 440px;
   position: relative;
-font-size: 18px;
-left:0px;
+font-size: 20px;
+left:120px;
 font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
 .added-friends{
@@ -86,19 +82,23 @@ font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Ga
 
 }
 .friends-icon img{
-  position: relative;
   width:40px;
-  top:-90px;
-  left:20px;
+  float:left;
+  margin-top: 10px;
+
 }
 .image_template5 img{
   position: relative;
-  height:80px;
-  width:80px;
-  bottom: 100px;
-
+ 
+  width:360px;
   border-radius: 10px;
-
   border: 2px solid #FFF;
   position: relative;
+  top:-50px;
  }
+/* .email{
+  position: relative;
+  font-size: 20px;
+  top:100px;
+
+ }*/

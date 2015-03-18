@@ -7,43 +7,84 @@
 
 
 <div id= "bar">
-  <%=link_to "Log out", destroy_user_session_path, :method => :delete, class: "log-out" %>
-  <div class="logo">
-   <img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpf1/v/t34.0-12/10994726_10155228223160080_1910018901_n.jpg?oh=d47bb160ca49c869e553674264c22902&oe=54FA9FD2&__gda__=1425652803_fa960b0b6e44ffa227671053858e4556">
- </div>
-
-</div>
-
-
-<div class="image_template2">
-  <% if current_user.image %>
-    <%= image_tag current_user.image.image.url(:thumb)  %>
-  <%end%>
-</div>
-
-
-<div class="profile-icon">
-  <img src="http://locate.mk/images/profile-icon.png">
-</div>
-
-<div class="side-bar">
-  <div class="image_template">               
-    <% if current_user.image %>
-      <%= image_tag current_user.image.image.url(:thumb) %>
-      <%= link_to "Delete Photo",current_user.image, method: :delete, class: "image-delete" %>
-      <div class="name">
-       <%= current_user.first_name%>   
+  <div class= "friends-search">
+   <h4> Find your friends </h4> 
+    <%= form_tag potlocks_path, :method => 'get' do %>
+    <%= text_field_tag :friendship  %>
+    <%= submit_tag "Go" , class: "find-me"%>
+ <% end %>
+       <div class="friends-icon">
+         <img src="http://locker33.calevir.com/wp-content/uploads/2013/09/search-icon.png">
       </div>
-    <%#= current_user.email %>
-    <% end %>
+    </div>
+       <%=link_to "Log out", destroy_user_session_path, :method => :delete, class: "log-out" %>
   </div>
-  <button type="button" class="btn btn-link " id="add-photo2" data-toggle="modal" data-target="#image-uploader">
+
+
+     <div class="image_template2">
+        <% if current_user.image %>
+         <%= image_tag current_user.image.image.url(:thumb)  %>
+       <%end%>
+    </div>
+    <div class="profile-icon">
+        <img src="http://locate.mk/images/profile-icon.png">
+   </div>
+
+   <div class="side-bar">
+     <div class="image_template">               
+         <% if current_user.image %>
+          <%= image_tag current_user.image.image.url(:thumb) %>
+  <% end %>
+          <%= link_to "Delete Photo",current_user.image, method: :delete, class: "image-delete" %>
+          <div class="name">
+          <%= current_user.first_name%> 
+           <%= current_user.last_name%>   
+       <%= current_user.email %> 
+   </div>
+  </div>
+ <button type="button" class="btn btn-link " id="add-photo2" data-toggle="modal" data-target="#image-uploader">
    Change your photo
   </button>
+
+  <div class="friends">
+  <% for user in @users %>
+     <div class="friend-name">
+      <%= user.first_name%>
+       <%= user.last_name%>
+     
+   </div>
+      <div class="image_template5">
+         <% if user.image %></br>
+         <%= image_tag user.image.image.url %></br>
+  <% end %>
+     </div> 
+       <div class="add-friend">
+        <% if User.exists? %>
+       <%= link_to "add friend", friendships_path(:friend_id => user.id), :method => :post %>
+        <br/>
+        <% end %>
+    </div>
+ <% end %>
 </div>
+<hr>
+ 
+  <%= form_for Potlock.new do |f| %>
+           <div class="create">
+            <h2> Invitations name </h2>
+          </div>
+           <%=f.text_area :create, id: "create", placeholder: "" %>
+           <%=f.date_select :due_date, class: "due-date" %> </br> 
+           <%=f.label :due_date, "Date", class: "date-label"%>
+           <%#=f.label :meal, "Meal", class: "meal-label" %> <div id="meal"> <%=f.select :meal,options_for_select(%w[Meal Breakfast Brunch Lunch Dinner ]) %> </br>
+          <%=f.label :address, "Place", class: "address" %> <%=f.text_area :address, placeholder: "add your address", class: "address-form" %>
+       
+            <%= f.submit 'Create', class: "post"%>
+    
+       <%end%>
 
 
 
+  
 <button type="button" class="btn btn-link " id="add-photo" data-toggle="modal" data-target="#image-uploader">
  <div class="camera-logo">
   <img src="http://www.clker.com/cliparts/O/c/P/C/o/K/white-camera-hi.png">
@@ -81,98 +122,61 @@ Add your photo
 
 
 
-  <%= form_for Potlock.new do |f| %>
 
-  <div class="form">
-    <h2> Start a new potluck </h2>
-    <h3> Name your potluck</h3>
-    <div class="pen-icon">
-      <img src="http://simpleicon.com/wp-content/uploads/pen-15.png">
-    </div>
-    <%=f.text_area :create, id: "create", placeholder: "" %><hr>
-    <div class="slide-icon">
-      <img src="https://cdn1.iconfinder.com/data/icons/mobiletouch-gestures/500/up-512.png">
-    </div>
-    <div class="meal-icon">
-     <img src="http://www.amidonsolutions.com/eugenia/images/icon_dining.png
-     ">
-   </div>
-   <div class="calender-icon">
-    <img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPjSWjgGg6h0TsQjnsQ32DBgh_bDEyUfQclGA5KrigW7VJOGI8">
-  </div>
-  <%=f.date_select :due_date, class: "due-date" %> </br> 
-  <%=f.label :due_date, "Date", class: "date-label"%>
-  <%#=f.label :meal, "Meal", class: "meal-label" %> <div id="meal"> <%=f.select :meal,options_for_select(%w[Meal Breakfast Brunch Lunch Dinner ]) %> </br>
-  <div class="map-icon">
-    <img src="https://cdn4.iconfinder.com/data/icons/pictype-free-vector-icons/16/location-alt-512.png">
-    <%=f.label :address, "Place", class: "address" %> <%=f.text_area :address, placeholder: "add your address", class: "address-form" %>
-    <div class= "bottom">
-      <%= f.submit 'Create', class: "post"%>
-    </div>
-  </div>  
-  <div class="image_template3">
-    <% if current_user.image %>
-    <%= image_tag current_user.image.image.url(:thumb)  %>
+          <div class="image_template3">
+      <% if current_user.image %>
+       <%= image_tag current_user.image.image.url(:thumb)  %>
     <%end%>
   </div>
-</div>
 
-</div>
-
-<%end%>
-
-
-<div class= "friends-search">
-  <h4> Find your friends </h4>
-  <%= form_tag potlocks_path, :method => 'get' do %>
-    <%= text_field_tag :friendship, @search_term %>
-    <%= submit_tag "Go", :first_name  => nil, class: "find-me"%>
-  <% end %>
-  <div class="friends-icon">
-    <img src="http://locker33.calevir.com/wp-content/uploads/2013/09/search-icon.png">
+  
+   <div class="friends-icon2">
+       <img src="https://cdn0.iconfinder.com/data/icons/cosmo-user/40/friends-512.png">
+       <h4> Friends</h4>
   </div>
+   <div class="counts">
+ <%= current_user.friendships.count %>   
 </div>
-
-
-<div class="friends">
-  <% for user in @users %>
-    <div class="friend-name">
-      <%= user.first_name%></br>
-    </div>
-    <div class="image_template5">
-      <% if user.image %></br>
-        <%= image_tag user.image.image.url %></br>
-      <% end %>
-    </div> 
-    <div class="add-friend">
-      <%= link_to "add friend", friendships_path(:friend_id => user.id), :method => :post %>
-      <br/>
-    </div>
-  <% end %>
-</div>
-
 
   <div class="friends-side">
     <% current_user.friendships.each do |friendship| %>
+     
+    <div class="image_template4">
+            <% if friendship.friend %>
+               <%=  image_tag friendship.friend.image.image.url %>
       <% if friendship.friend %>
         <div class="friend-name1">
           <%= friendship.friend.first_name %>
-        </div>
+        <% end%>
+     </div>
+          </div>
+           
+     <%end %> 
+      <%= link_to "unfriend", friendship, :method => :delete, class: "unfriend" %></br> 
+ <%  end %> 
+</div>
+
+
+  
+      <h2> friended </h2>
+      <% current_user.inverse_friends.each do |inverse_friend| %>
+       <% if current_user.inverse_friends.exists?(current_user) and not current_user.inverse_friends.exists?(current_user) %>
+       <div class="friend-name1">
+       <%= inverse_friend.first_name %>
+     </div>
+    <%end%>
         <div class="image_template4">
-          <% if friendship.friend.image %>
-            <%=  image_tag friendship.friend.image.image.url %>
-          <% end%>
-        </div>
-        <%= link_to "unfriend",friendship, :method => :delete, class: "unfriend" %></br>
-      <%end %> 
-    <%  end %> 
-    <div class="friends-icon2">
-    <img src="https://cdn0.iconfinder.com/data/icons/cosmo-user/40/friends-512.png">
-  </div>
-  </div>
-  <div class="bottom1">
+         <%= image_tag inverse_friend.image.image.url %>
   </div>
 
+      
+      <%= link_to "remove",friendship_inverse_friendship_path(current_user, inverse_friend), :method => :delete %>
+        <%= link_to "add friend", friendships_path(:friend_id => inverse_friend), :method => :post %>
+     
+     <%end %>
+
+         
+   
 
 
 

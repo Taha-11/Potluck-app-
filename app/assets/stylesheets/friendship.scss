@@ -2,27 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
  .image_template4 img{
-  height:60px;
-  width:60px;
+  height:100px;
+  width:100px;
   border: 2px solid #FFF;
-  position: relative;
-  left:20px;
+  bottom: 100px;
+   
+  
  }
  .friend-name1{
   position: relative;
  font-size: 14px;
-   left:100px;
+  left:8px;
+  top:-30px;
   color: white;
  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
- font-weight:bold;
- top:40px;
+
 
  }
  .unfriend{
     position: relative;
- font-size: 12px;
+ font-size: 14px;
  right:180px;
- color: white;
+ color: black;
  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
  font-weight:bold;
   left:20px;
@@ -31,18 +32,39 @@
 }
 .friends-side{
   position: relative;
-  width:480px;
-  bottom: 640px;
-  height:500px;
-  left: 1100px;
-  background-color:#517FA4;
+  width:400px;
+  height:820px;
+  float: right;
+  background-color:white;
   border-radius: 5px;
+  bottom: 1226px;
+  border: 1px solid #E9EAED;
+  border-radius: 10px;
+  left:1320px;
 }
 
 .friends-icon2 img{
+  float: right;
   position: relative;
-  width:60px;
-  top:20px;
-  left:400px;
+  width:40px;
+  left:1165px;
+  bottom: 1225px;
  }
+.friends-icon2 h4{
+  position: relative;
+   float:right;
+   font-size: 20px;
+   color:rgba(248, 140, 93, 0.99);
+   bottom: 1225px;
+   left:1290px;
 
+
+}
+.counts{
+  float: right;
+   position: relative;
+   font-size: 18px;
+    left:1383px;
+    bottom: 1214px;
+
+}

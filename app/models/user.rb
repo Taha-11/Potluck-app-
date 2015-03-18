@@ -4,9 +4,11 @@ class User < ActiveRecord::Base
         geocoded_by :address
         after_validation :geocode 
 
-         #validates :user_id, presence: true, :uniqueness => true
-          #validate :images_limit
-          validates :first_name, :email, presence: true
+          # validates_uniqueness_of :user_id, :scope => :friend_id
+          # validates :first_name, :email, presence: true
+          # validates :friend_id, :uniqueness => {:scope => :id }
+          
+
 
           devise :database_authenticatable, :registerable, :omniauthable,
              :recoverable, :rememberable, :trackable, :validatable
@@ -19,15 +21,15 @@ class User < ActiveRecord::Base
          has_many :friendships
          has_many :invites 
          has_many :friends, :through => :friendships
-         has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
-         has_many :inverse_friends, :through => :inverse_friendships, :source => :user
-
-
-         
+         has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id",:dependent => :destroy
+         has_many :inverse_friends, :through => :inverse_friendships, :source => :user, :dependent => :destroy
+        
  
   
      
-
+      def full_name
+      "#{first_name} #{last_name}"
+      end
 
 
       def image
@@ -49,15 +51,17 @@ def self.find_or_create_from_facebook(omniauth_data)
   user = User.where(provider: :facebook, uid: omniauth_data["uid"]).first
    unless user
     name = omniauth_data["info"]["name"].split
-    image = omniauth data["info"]["image"]
+    image = omniauth_data["info"]["image"]
      user = User.create(provider: :facebook,
                          uid: omniauth_data["uid"],
                          email: omniauth_data["info"]["email"],
                          image: image[1],
                          first_name: name[0],
+                         last_name: name[1],
                          oauth_token: omniauth_data["token"],
-                         oauth_expires_at: Time.at(omniauth_data["credentials"]["expires_at"]),
-                         omniauth_raw_data: omniauth_data)
+                         oauth_expires_at: Time.at(omniauth_data["credentials"]["expires_at"]))
+                         
+
 
 
    

@@ -5,6 +5,7 @@ class InvitesController < ApplicationController
      @invite = current_user.invites.build(:guest_id=> params[:guest_id]) 
      @invite.potlock = @potlock
     if @invite.save 
+      UserMailer.invitecreated_email(@invite).deliver
       redirect_to  @potlock
     else
       render "new "
@@ -19,7 +20,7 @@ def destroy
 end 
 
   def find
-    @friends = User.joins(:invites).where('friends.first_name iLIKE ?', "%#{params[:invites]}%")
+    @friends = User.joins(:invites).where('friends.first_name iLIKE ?', "%#{params[:invite]}%")
     # @friends = current_user.friendships.search(params[:friendship])
   end 
 end 

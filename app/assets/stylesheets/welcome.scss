@@ -6,27 +6,28 @@
   background-color:white;
   position: fixed;
   z-index: 10;
-  box-shadow: 0px 1px 0px rgba(111, 151, 182, 0.3) inset, 0px -1px 0px rgba(111, 151, 182, 0.1) inset, 0px 1px 1px rgba(75, 58, 69, 0.25);
+  background-color:#517FA4;
+  box-shadow: 0px 1px 0px rgba(248, 140, 93, 0.29) inset, 0px 0px 0px rgba(248, 140, 93, 0.29) inset, 0px 1px 1px rgba(75, 58, 69, 0.25);
   }
   .log-out{
-  font-size: 16px;
+  font-size: 20px;
   float:right;
-  margin-top: 4px;
-  color:#337AB7;
+  color:rgba(248, 140, 93, 0.99);
   text-decoration: none;
   font-family:"Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
-  max-width:50%;
+  max-width:60%;
   padding:8px;
   text-indent: 12px; 
   margin-right:4%;
+  margin-top: 0px;
  }
 
   .image_template2 img { 
-  width:300px;
+  width:360px;
   border-radius: 10px;
   float:left;
-  margin-top: 80px;
-  margin-left:20px;
+  margin-top: 90px;
+  margin-left:270px;
   border: 4px solid white;
 }
 
@@ -130,14 +131,14 @@ margin-top: 08px
 }
 .form{
   position: relative;
-  display: table;
   margin: auto;
-  bottom: 40px;
    width: 400px;
    border-radius: 5px;
    right:250px;
    background-color:white;
    height:440px;
+   top:500px;
+
 
 }
 
@@ -148,9 +149,9 @@ margin-top: 08px
   color: #337AB7;
   width:50px;
   cursor: pointer;
-  top: -100px;
   left:280px;
   font-size: 16px;
+  top:300px;
 }
 .address:hover{
   color: #555459;
@@ -178,21 +179,21 @@ margin-top: 08px
 }
 .name{
   position: relative;
-  margin-left: 170px;
+  margin-left: 280px;
   line-height: 1;
-   color:white;
-  font-size: 18px;
+   color:black;
+  font-size: 25px;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
-  bottom: 450px;
+  bottom: 150px;
 }
 .image-delete{
   position: relative;
   font-weight: 700;
   color:#337AB7;
-  margin-left: 167px;
-  bottom: 370px;
-  font-size: 12px;
+  margin-left: 132px;
+  bottom: 500px;
+  font-size: 14px;
  
  }
  .map-icon img{
@@ -212,7 +213,7 @@ margin-top: 08px
 textarea.address-form{
 position: relative;
  left: 100px; 
- top: -50px;
+ top: 500px;
  width:300px;
   height: 40px;
   border: 1px solid white;
@@ -248,12 +249,12 @@ textarea[placeholder] {
  position: relative;
    width:41px;
    cursor: pointer;
-
+   top:500px;
    left:60px;
-   top:-20px;
+ 
    color:#337AB7;
    font-size: 16px;
-   left:635px;
+
  }
 .bottom1{
   border:1px solid black;

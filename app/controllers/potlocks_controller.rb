@@ -1,19 +1,25 @@
 class PotlocksController < ApplicationController
 	before_action :authenticate_user!
 	def index
+    @friendship_count = Friendship.count 
 		@potlocks = Potlock.all
     @search_term = params[:friendship]
     if @search_term
-		  @users = User.where('users.first_name iLIKE ?', "%#{@search_term}%")
+		  @users = User.where('first_name iLIKE ? OR last_name iLIKE ?', "%#{@search_term}%", "%#{@search_term}%")
     else
       @users = []
     end
-
 		@image= Image.new
 		@images= Image.all
+    @friends = []
 end
+
+   def new 
+    
+    end 
 		
    def show
+
       @search_term = params[:invite]
     if @search_term
       @users = User.where('users.first_name iLIKE ?', "%#{@search_term}%")

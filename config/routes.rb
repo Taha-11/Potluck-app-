@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   end
   resources :friendships do
     post :find, on: :collection
-  end
+      resources :inverse_friendships, :controller => 'friendships' 
+   
+ end 
 
   # resources :friendships, :collection => { :index => :get }
   resources :images
