@@ -21,6 +21,7 @@
 
 
 
+
 $(function() {
   $('.button-to-add-photo').click(function() {
     $(this).parents('form').first().submit()
@@ -36,23 +37,18 @@ $(document).ready(function(){
     $('.image_template3 img').add($('.divOverlay')).fadeOut(); 
 });
 
- 
-   $('#create').one("click",function(){
-    $('#create').animate({
-      height: '+=40px'},100);
-
+ });
+  
+  $(document).ready(function(){
+    $('#friendship').click(function(){
+      $('.friends').toggle("slow");
     });
-   $('#create').one("click",function(){
-    $('.slide-icon img').toggle(0);
   });
-    $('.slide-icon').one("click",function(){
-    $('#create').animate({
-      height: '-=40px'},100)
-    });
-    $('.slide-icon').one("click",function(){
-           $('.slide-icon').toggle(0);
-   });
-    
+
+$(document).ready(function(){
+  $(".friend-notification img").mouseenter(function(){
+    $(".friends-requestes").slideDown("slow");
+  });
 });
 
 

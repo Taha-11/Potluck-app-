@@ -21,62 +21,96 @@
   </div>
 
 
+
+  <div class="notifications">
+       <%=link_to image_tag("http://flaticons.net/icons/Science%20and%20Technology/Bell.png"), new_potlock_path, class: "friend-notification" %>
+       <h4> Notifications </h4>
+         <div class="count">
+         <%= current_user.inverse_friendships.count %>
+       </div>
+     </div>
+     <div class="border">
      <div class="image_template2">
         <% if current_user.image %>
-         <%= image_tag current_user.image.image.url(:thumb)  %>
+         <%= image_tag current_user.image.image.url %>
        <%end%>
     </div>
     <div class="profile-icon">
         <img src="http://locate.mk/images/profile-icon.png">
    </div>
 
-   <div class="side-bar">
-     <div class="image_template">               
+    <div class="side-bar">
+      <div class="image_template">               
          <% if current_user.image %>
           <%= image_tag current_user.image.image.url(:thumb) %>
   <% end %>
           <%= link_to "Delete Photo",current_user.image, method: :delete, class: "image-delete" %>
           <div class="name">
-          <%= current_user.first_name%> 
-           <%= current_user.last_name%>   
-       <%= current_user.email %> 
-   </div>
+          <%= current_user.full_name%>   
+           <%= current_user.email %> 
+           <%#= image_tag current_user.image %>
+     </div>
   </div>
+</div>
+</div>
+
+
  <button type="button" class="btn btn-link " id="add-photo2" data-toggle="modal" data-target="#image-uploader">
    Change your photo
   </button>
 
   <div class="friends">
+    <div class="friends-img">
+    <img src="http://www.eresources.com/_/i/icon-add-people.png">
+  </div>
   <% for user in @users %>
      <div class="friend-name">
-      <%= user.first_name%>
-       <%= user.last_name%>
-     
+      <%= user.full_name%>
    </div>
       <div class="image_template5">
          <% if user.image %></br>
          <%= image_tag user.image.image.url %></br>
-  <% end %>
-     </div> 
+  <% end %> 
+     </div>
        <div class="add-friend">
         <% if User.exists? %>
-       <%= link_to "add friend", friendships_path(:friend_id => user.id), :method => :post %>
+        <%= link_to "add friend", friendships_path(:friend_id => user.id), :method => :post %>
         <br/>
-        <% end %>
+   <% end %>
     </div>
  <% end %>
-</div>
-<hr>
- 
+ </div>
+
   <%= form_for Potlock.new do |f| %>
            <div class="create">
-            <h2> Invitations name </h2>
+            <h2> Potluck </h2>
           </div>
            <%=f.text_area :create, id: "create", placeholder: "" %>
+           <div class="date">
+            <h4> The potlucks date </h4>
+            <img src = "http://icons.iconarchive.com/icons/marcus-roberto/google-play/512/Google-Calendar-icon.png">
            <%=f.date_select :due_date, class: "due-date" %> </br> 
            <%=f.label :due_date, "Date", class: "date-label"%>
-           <%#=f.label :meal, "Meal", class: "meal-label" %> <div id="meal"> <%=f.select :meal,options_for_select(%w[Meal Breakfast Brunch Lunch Dinner ]) %> </br>
+            <%=f.time_select :due_date, class: "due-date" %> </br> 
+         </div>
+           <div class="kindof-meal">
+            <div class="meal-icon">
+              <h4> The potlucks genre </h4>
+            <img src="http://sohip.org/wp-content/uploads/2013/06/food-icon1.png"/>
+          </div>
+           <%=f.label :meal, "Meal", class: "meal-label" %> <div id="meal"> <%=f.select :meal,options_for_select(%w[Meal Breakfast Brunch Lunch Dinner ]) %> </br>
+         </div>
+
+           <div class="map">
+            <div class="map-icon">
+            <img src="http://www.veryicon.com/icon/png/System/Super%20Vista%20General/world.png">
+          </div>
+            <div class="map-image">
+              <h4> The potlucks adress <h4>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZdPe9eGYWA-cxU52_gVdYx7Z1LUKzCZWCQktsRzmIqdmImFM">
           <%=f.label :address, "Place", class: "address" %> <%=f.text_area :address, placeholder: "add your address", class: "address-form" %>
+        </div>
+        </div>
        
             <%= f.submit 'Create', class: "post"%>
     
@@ -129,60 +163,71 @@ Add your photo
     <%end%>
   </div>
 
-  
+    <div class="friends-icon-side">
    <div class="friends-icon2">
        <img src="https://cdn0.iconfinder.com/data/icons/cosmo-user/40/friends-512.png">
        <h4> Friends</h4>
   </div>
-   <div class="counts">
+ <!--   <div class="counts">
  <%= current_user.friendships.count %>   
 </div>
-
+</div> -->
   <div class="friends-side">
     <% current_user.friendships.each do |friendship| %>
-     
     <div class="image_template4">
             <% if friendship.friend %>
                <%=  image_tag friendship.friend.image.image.url %>
       <% if friendship.friend %>
         <div class="friend-name1">
-          <%= friendship.friend.first_name %>
+          <%= friendship.friend.full_name %>
         <% end%>
      </div>
-          </div>
-           
-     <%end %> 
-      <%= link_to "unfriend", friendship, :method => :delete, class: "unfriend" %></br> 
+   </div>
+   <%end %> 
+       <%= link_to "unfriend", friendship, :method => :delete, class: "unfriend" %></br> 
  <%  end %> 
 </div>
 
-
   
-      <h2> friended </h2>
-      <% current_user.inverse_friends.each do |inverse_friend| %>
-       <% if current_user.inverse_friends.exists?(current_user) and not current_user.inverse_friends.exists?(current_user) %>
-       <div class="friend-name1">
-       <%= inverse_friend.first_name %>
-     </div>
-    <%end%>
-        <div class="image_template4">
-         <%= image_tag inverse_friend.image.image.url %>
-  </div>
+<!-- <h2> friended </h2>
+<%# current_user.inverse_friends.each do |inverse_friend| %>
+<div class="friend-name1">
+  <%#= inverse_friend.first_name %>
+</div>
+<div class="image_template4">
+  <%#= image_tag inverse_friend.image.image.url %>
+</div>
+  <%#= link_to "remove",friendship_inverse_friendship_path(current_user, inverse_friend), :method => :delete %>
+<%#= link_to "add friend", friendships_path(:friend_id => inverse_friend), :method => :post %>
+<%#end %>
 
+        --> 
+        <div class="friends-requestes">
+ <% current_user.inverse_friends.each do |inverse_friend| %>
+<% if !current_user.friends.exists?(inverse_friend)  %> 
+        <div class="image_template7">
+        <%=image_tag inverse_friend.image.image.url%>
+      </div>
+         <div class="request-name">
+        <%= inverse_friend.full_name %>
+        <%= inverse_friend.friends.count %>
+      </div>
+      <div class="friend-image-icon">
+        <img src="https://cdn2.iconfinder.com/data/icons/picons-essentials/71/user_add-512.png">
+      </div>
+      <div class="accept">
+      <%= link_to "Accept", friendships_path(:friend_id => inverse_friend), :method => :post %>
       
-      <%= link_to "remove",friendship_inverse_friendship_path(current_user, inverse_friend), :method => :delete %>
-        <%= link_to "add friend", friendships_path(:friend_id => inverse_friend), :method => :post %>
-     
-     <%end %>
-
-         
-   
+    </div>
+         <%#= link_to "Ignore", friendship_inverse_friendship_path(current_user, inverse_friend), :method => :delete  %>      
+   <% end %>
+  <% end %>
+   </div>
 
 
 
 
-
-
+<%= will_paginate @friendships, :previous_label => " " %>
 
 
 <%#=f.text_field :listing_items, class: "listing-items" %> </br>
@@ -195,6 +240,24 @@ Add your photo
       } else {
         $(".profile-icon").css("display","none");
         $("#add-photo").css("display","none");
+      }
+  });
+</script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+  if (<%= current_user.notification_count > 0  %>){
+      $(".count").text(<%= current_user.notification_count %>).show(500);
+    }
+ });
+  </script>
+
+ <script type="text/javascript">
+  $(document).ready(function(){
+     if (<%=user.present?%>){
+        $(".friends-img img").css("display", "none");
+      } else {
+        $(".friends-img img").css("display", "block");
+      
       }
   });
 </script>

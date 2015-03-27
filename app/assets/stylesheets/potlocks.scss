@@ -1,7 +1,6 @@
 html body{
 
-  background-color: rgba(223, 224, 225, 0.3);
-  height: 100%;
+ background-color: white;
 
   
 }
@@ -15,19 +14,19 @@ textarea:focus{
 
 textarea#create{
   position: absolute;
-  width: 360px;
-  height: 30px;
-  border: 1px solid #517FA4!important;;
+  width: 1000px;
+  height: 50px;
+  border: 1px solid rgba(248, 140, 93, 0.49)!important;
   padding: 5px;
   font-family: Tahoma, sans-serif;
-  font-weight: bold;
   background-repeat: no-repeat;
-  top:530px;
+  top:440px;
   resize: none;
-  background-color: #F5F8FA;
-  left:700px;
+  background-color: white;
+  left:160px;
   font-size: 16px;
-
+/*  box-shadow: 0px 1px 1px rgba(248, 140, 93, 0.19), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
+*/
 }
 #create{
   color:black;
@@ -55,7 +54,7 @@ line-height: 1.2;
  width:200px;
 height: 20px;
 margin-left:200px;
-margin-top:50px;
+top:50px;
 
 
 }
@@ -88,25 +87,30 @@ select {
 
   #potlock_due_date_3i{
     position: relative;
-    top: 440px;
-    right: 200px;
+    top: 80px;
+    left:0px;
+    font-size: 16px;
+    
   }
 
  #potlock_due_date_2i{
    position: relative;
-    top: 440px;
+   top: 80px;
+    left:0px;
+    font-size: 16px;
+
     
    
  }
 
  #potlock_meal{
     position: relative;
-    width: 150px;
+    width: 300px;
     -moz-border-radius: 9px 9px 9px 9px;
     -webkit-border-radius: 9px 9px 9px 9px;
     background: url("arrow.gif") no-repeat scroll 319px 1px white;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-   top:355px;
+   top:-50px;
     color: #337AB7;
     font-weight: bold;
     white-space: nowrap;
@@ -114,18 +118,20 @@ select {
     border:2px solid white;
     cursor: pointer;
     font-size: 16px;
-    left:44px;
+    left:0px;
+    background-color: #F5F8FA;
 
-      
-   }
+  }
   
 
 .meal-label{
- color:#337AB7;
- margin-top: 0px;
- margin-left: 44px;
- font-weight: normal;
- font-size: 18px;
+     position: relative;
+    top: 120px;
+    left: 200px;
+    font-size: 25px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+
 }
  .meal-label:hover{
   color:#555459;
@@ -163,9 +169,8 @@ select {
   position: relative;
   height:80px;
   width:80px;
-  margin-left: 10px;
-  border-radius: 10px;
-  bottom: 460px;
+  margin-left: 360px;
+  bottom:385px;
   border: 2px solid #FFF;
   position: relative;
 
@@ -212,14 +217,19 @@ margin: auto;
   }
   #add-photo2{
   position: relative;
-  left : 90px;
-   top: -580px;
+  right : 330px;
+  bottom: 150px;
   line-height: 1;
-   color:black;
-  font-size: 15px;
+  font-size: 20px;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
+  float: left;
+  color:white;
   }
+   #add-photo2:hover{
+    color: black;
+
+   }
 .camera-logo img{
   width:30px;
 }
@@ -245,7 +255,40 @@ margin: auto;
 
 .create h2{
   position: relative;
-  bottom:530px;
-  left:700px;
-  color: #517FA4;
+  top:40px;
+  right:580px;
+  font-size: 20px;
+}
+.friend-notification img{
+  float: right;
+   width:30px;
+   position: relative;
+   top:50px;
+   right:350px;
+
+}
+.notifications{
+  height: 100px;
+  width:410px;
+  float: right;
+  background-color: white;
+  background-color: #517FA4;
+}
+
+.notifications h4{
+  position: relative;
+  color:white;
+  font-size: 18px;
+  top:45px;
+  left:60px;
+}
+
+.friends-icon-side{
+  position: relative;
+  float: right;
+  height: 50px;
+  bottom: 880px;
+  width: 410px;
+  right: 0px;
+  background-color: #517FA4;
 }

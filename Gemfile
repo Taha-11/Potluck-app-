@@ -31,6 +31,9 @@ gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'omniauth-facebook'
 gem "koala", "~> 1.11.0rc"
+gem 'will_paginate', '~> 3.0.6'
+
+
 
 
 

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  potlock_id: 
+  user_id: 
+  comment: MyString
+
+two:
+  potlock_id: 
+  user_id: 
+  comment: MyString

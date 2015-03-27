@@ -1,6 +1,8 @@
 class PotlocksController < ApplicationController
 	before_action :authenticate_user!
 	def index
+
+    @friendships =Friendship.paginate(:page => params[:page])
     @friendship_count = Friendship.count 
 		@potlocks = Potlock.all
     @search_term = params[:friendship]
@@ -11,7 +13,6 @@ class PotlocksController < ApplicationController
     end
 		@image= Image.new
 		@images= Image.all
-    @friends = []
 end
 
    def new 
@@ -19,7 +20,8 @@ end
     end 
 		
    def show
-
+      @comments = Comment.all
+      @comment = Comment.new 
       @search_term = params[:invite]
     if @search_term
       @users = User.where('users.first_name iLIKE ?', "%#{@search_term}%")

@@ -1,0 +1,43 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.friends-requestes{
+
+  position: relative;
+  display: none;
+  width:400px;
+  float:right;
+  left:0px;
+  bottom:1160px;
+  background-color: white;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
+
+
+}
+.image_template7 img{
+  width:80px;
+  border: 2px solid #FFF;
+  bottom: 100px;
+}
+.request-name{
+  font-size: 20px;
+  position: relative;
+  left:90px;
+  bottom: 80px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-weight: 700;
+
+}
+.accept{
+  font-size: 20px;
+  position: relative;
+  left:300px;
+  bottom:60px;
+}
+.friend-image-icon img{
+  width:40px;
+  position: relative;
+  left:310px;
+  bottom:100px;
+
+}

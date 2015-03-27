@@ -22,13 +22,12 @@
   margin-top: 0px;
  }
 
-  .image_template2 img { 
-  width:360px;
-  border-radius: 10px;
+  .image_template2 img{ 
+  width:320px;
   float:left;
-  margin-top: 90px;
-  margin-left:270px;
-  border: 4px solid white;
+  margin-top: 20px;
+  margin-left:60px;
+  border: 1px solid white;
 }
 
 
@@ -144,23 +143,18 @@ margin-top: 08px
 
 
 .address{
-
   position: relative;
-  color: #337AB7;
   width:50px;
   cursor: pointer;
-  left:280px;
-  font-size: 16px;
-  top:300px;
+  left:100px;
+  font-size: 25px;
+  top:200px;
+  font-weight: normal;
 }
 .address:hover{
   color: #555459;
 }
 
-.map{
-  margin-left: 200px;
- 
-}
 .profile-icon img{
  width:300px;
   border-radius: 10px;
@@ -179,21 +173,23 @@ margin-top: 08px
 }
 .name{
   position: relative;
-  margin-left: 280px;
+  left: 50px;
   line-height: 1;
-   color:black;
-  font-size: 25px;
+   color:#23527C;
+  font-size: 20px;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
-  bottom: 150px;
+  bottom: 170px;
+  display: inline;
 }
 .image-delete{
   position: relative;
   font-weight: 700;
   color:#337AB7;
-  margin-left: 132px;
-  bottom: 500px;
+  margin-left: 380px;
+  bottom: 370px;
   font-size: 14px;
+  float: left;
  
  }
  .map-icon img{
@@ -212,8 +208,8 @@ margin-top: 08px
  }
 textarea.address-form{
 position: relative;
- left: 100px; 
- top: 500px;
+ left: -50px; 
+ top: 30px;
  width:300px;
   height: 40px;
   border: 1px solid white;
@@ -223,7 +219,7 @@ position: relative;
   background-position: bottom right;
   background-repeat: no-repeat;
   background-color: #F5F8FA;
- border: 1px solid #E1E8ED;
+/* border: 1px solid #E1E8ED;*/
  resize:none;
  font-size: 25px;
 
@@ -234,30 +230,102 @@ textarea[placeholder] {
   outline: none;
 
 }
-.calender-icon img{
- 
-   position: relative;
-   width:34px;
-   cursor: pointer;
-   left:600px;
-   margin-top: 10px
 
-  
- }
  .date-label{
- 
- position: relative;
+  position: relative;
    width:41px;
-   cursor: pointer;
-   top:500px;
-   left:60px;
- 
-   color:#337AB7;
-   font-size: 16px;
+   top:120px;
+   left:200px;
+   font-size: 25px;
+   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+   font-weight: normal;
 
  }
 .bottom1{
   border:1px solid black;
   height: 200px;
   bottom: 400px;
+}
+.map-image img{
+  width:40px;
+  position: relative;
+  left:0px;
+ top: 30px;
+}
+.map{
+  position: relative;
+  height: 400px;
+  width:300px;
+   background-color:rgba(196, 196, 196, 0.12);
+  left:350px;
+  top:-140px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
+}
+.border{
+  position: relative;
+ box-shadow: 0px 1px 1px rgba(248, 140, 93, 0.17), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12); 
+ height: 400px;
+ top: 30px;
+ background-color: #E9EAED;
+   width:550px;
+}
+.date{
+   height: 400px;
+  width:300px;
+  position: relative;
+  left:860px;
+  top:100px;
+   background-color:rgba(196, 196, 196, 0.12);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
+
+}
+.kindof-meal{
+  height: 400px;
+  width:300px;
+  position: relative;
+  left:160px;
+  top:-310px;
+   background-color:rgba(196, 196, 196, 0.12);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
+
+}
+.date img {
+  width:40px;
+  position: relative;
+  top:-80px;
+}
+.map-icon img{
+  width:50px;
+  position: relative;
+  top:-50px;
+  left:0px;
+}
+.meal-icon img{
+  width:40px;
+  position: relative;
+  top:-70px;
+}
+.date h4{
+  font-size: 16px;
+  color:#292F33;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  position: relative;
+  top:-40px;
+  left:50px;
+}
+.map-image h4{
+  font-size: 16px;
+  color:#292F33;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  position: relative;
+  top:-95px;
+  left:50px;
+}
+.meal-icon h4{
+  font-size: 16px;
+  color:#292F33;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  position: relative;
+  top:-38px;
+  left:50px;
 }

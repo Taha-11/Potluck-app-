@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
              :recoverable, :rememberable, :trackable, :validatable
           devise :database_authenticatable, :registerable,
               :recoverable, :rememberable, :trackable, :validatable
-      
+         has_many :comments 
          has_many :images
          has_many :potlocks
          has_many  :items
@@ -24,8 +24,18 @@ class User < ActiveRecord::Base
          has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id",:dependent => :destroy
          has_many :inverse_friends, :through => :inverse_friendships, :source => :user, :dependent => :destroy
         
- 
+  #   def added_friends
+  #   inverse_friends.joins(:friendships).where("friendships.friend_id = users.id and friendships.user_id = users.id").all
+  # end
+
   
+      def notification_count
+        array = []
+        self.inverse_friends.each do |i|
+          array << i if !self.friends.exists?(i)
+        end
+        return array.count
+      end
      
       def full_name
       "#{first_name} #{last_name}"
@@ -55,7 +65,7 @@ def self.find_or_create_from_facebook(omniauth_data)
      user = User.create(provider: :facebook,
                          uid: omniauth_data["uid"],
                          email: omniauth_data["info"]["email"],
-                         image: image[1],
+                         image: image[0],
                          first_name: name[0],
                          last_name: name[1],
                          oauth_token: omniauth_data["token"],

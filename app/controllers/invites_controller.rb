@@ -5,7 +5,7 @@ class InvitesController < ApplicationController
      @invite = current_user.invites.build(:guest_id=> params[:guest_id]) 
      @invite.potlock = @potlock
     if @invite.save 
-      UserMailer.invitecreated_email(@invite).deliver
+      # UserMailer.invitecreated_email(@invite).deliver
       redirect_to  @potlock
     else
       render "new "

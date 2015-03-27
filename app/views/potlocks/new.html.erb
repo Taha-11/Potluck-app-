@@ -1,9 +1,16 @@
 <div id= "bar">
   <%=link_to "Log out", destroy_user_session_path, :method => :delete, class: "log-out" %>
-  <div class="logo">
-     <img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpf1/v/t34.0-12/10994726_10155228223160080_1910018901_n.jpg?oh=3e5c4b37406b6912d10b3dd75a5e8b8e&oe=54F8A592&__gda__=1425523203_d0f2a36cb8de9038e7f1a9a99a073652">
-    </div>
 </div>
 
+  <% current_user.inverse_friends.each do |inverse_friend| %>
+<% if !current_user.friends.exists?(inverse_friend)  %> 
+        <div class="image_template4">
+        <%=image_tag inverse_friend.image.image.url%>
+        <%= inverse_friend.full_name %>
+      </div>
+      <%= link_to "Accept", friendships_path(:friend_id => inverse_friend), :method => :post, class: "accept" %>
+         <%= link_to "Ignore", friendship_inverse_friendship_path(current_user, inverse_friend), :method => :delete  %>       
+   <% end %>
+  <% end %>
 
 

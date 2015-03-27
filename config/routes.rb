@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'potlocks#index'
   resources :potlocks do
+      resources :comments
       resources :invites do
     post :find, on: :collection
   end

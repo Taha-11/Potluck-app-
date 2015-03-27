@@ -3,15 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .friends-search h4{
+  position: relative;
  float:left;
  font-size: 18px;
  color: white;
- margin-left:100px;
+ left:380px;
 font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 
 }
 
 #friendship{
+  position: relative;
   float: left;
   width:600px;
   border-color: #333;
@@ -21,7 +23,7 @@ font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Ga
   resize: none;
   background-color: #F5F8FA;
   border: 1px solid #FCEAEC !important;
-  margin-left: 20px;
+  left: 400px;
   margin-top: 5px;
   width:40%;
 
@@ -43,35 +45,39 @@ font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Ga
  }
 
  .friends{
-  position: relative;
-  height: 360px;
-  padding-bottom: 0px;
-  width:360px;
+  position: absolute;
+  height: 160px;
+  width:320px;
   margin: auto;
-  bottom: 575px;
-  
-   border: 4px solid white;
-   border-radius: 10px;
-   margin-left: 700px;
+  top: 40px;
+   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
+   left: 550px;
+  background-color: white;
  }
-
+ .friends-img img{
+  width:120px;
+  position: relative;
+  left:100px;
+ }
  .friend-name{
   position: relative;
- font-size: 24px;
- top:363px;
- color: black;
+ font-size: 16px;
+ color:black;
  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
  font-weight:bold;
- left:10px;
+ left:110px;
+ top: 10px;
+
+ 
 
 
 }
 
 .add-friend{
-  bottom: 440px;
+  bottom: 30px;
   position: relative;
-font-size: 20px;
-left:120px;
+font-size: 16px;
+left:10px;
 font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
 .added-friends{
@@ -80,25 +86,33 @@ font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Ga
   left:1300px;
   top:-500px;
 
+
 }
 .friends-icon img{
+  position: relative;
   width:40px;
   float:left;
   margin-top: 10px;
+  left:420px;
 
 }
 .image_template5 img{
   position: relative;
  
-  width:360px;
-  border-radius: 10px;
+  width:100px;
   border: 2px solid #FFF;
   position: relative;
-  top:-50px;
+  bottom:42px;
  }
-/* .email{
+ .count{
+  font-size: 13px;
+  width:25px;
   position: relative;
-  font-size: 20px;
-  top:100px;
-
- }*/
+  top:10px;
+  background-color: #E04C4C;
+  border-radius: 100px;
+  padding-left: 10px;
+  left: 20px;
+  display: none;
+  color: white;
+ }
