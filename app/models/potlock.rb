@@ -4,5 +4,5 @@ class Potlock < ActiveRecord::Base
   after_validation :geocode
   has_many :items, :dependent => :destroy
   has_many :invites, :dependent => :destroy
-  has_many :comments 
+  has_many :comments, :dependent => :destroy
 end

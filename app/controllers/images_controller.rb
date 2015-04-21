@@ -4,6 +4,11 @@ class ImagesController < ApplicationController
     @images = Image.all
   end
 
+  def show
+      @image= Image.new
+    @images = Image.all
+  end 
+
   def create
     image_params= params.require(:image).permit(:image)
     @image =Image.new image_params

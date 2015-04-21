@@ -6,12 +6,13 @@
   position: relative;
   display: none;
   width:400px;
-  float:right;
-  left:0px;
-  bottom:1160px;
+  float:left;
+  left:815px;
+  bottom: 750px;
   background-color: white;
+  /*background-color: rgba(248, 140, 93, 0.99);*/
+  height: 200px; 
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
-
 
 }
 .image_template7 img{
@@ -25,19 +26,45 @@
   left:90px;
   bottom: 80px;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-font-weight: 700;
+  font-weight: 400;
+
 
 }
 .accept{
-  font-size: 20px;
+  font-size: 16px;
   position: relative;
-  left:300px;
-  bottom:60px;
+  left:200px;
+  bottom:90px;
+
 }
 .friend-image-icon img{
   width:40px;
   position: relative;
-  left:310px;
+  left:235px;
   bottom:100px;
-
 }
+.ignore{
+    font-size: 16px;
+  position: relative;
+  left:270px;
+  bottom:113px;
+}
+.friends-friends h4{
+  position: relative;
+  bottom: 100px;
+  left: 5px;
+  color: #337AB7;
+}
+.inerse-counts{
+  font-size: 20px;
+  position: relative;
+  bottom: 135px;
+  left:70px;
+  color: #337AB7;
+}
+.selected{
+font-size: 600px;
+position: relative;
+left:500px;
+}
+

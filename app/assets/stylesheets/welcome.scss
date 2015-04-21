@@ -1,46 +1,47 @@
-#bar{
+.bar{
   position: absolute;
   margin-top: 0px;
   width:100%;
-  height: 44px;
+  height: 60px;
   background-color:white;
   position: fixed;
   z-index: 10;
-  background-color:#517FA4;
+  background-color:#539BB2;
   box-shadow: 0px 1px 0px rgba(248, 140, 93, 0.29) inset, 0px 0px 0px rgba(248, 140, 93, 0.29) inset, 0px 1px 1px rgba(75, 58, 69, 0.25);
+  }
+  .middle{
+    height: 700px;
+    width:800px;
+    position: relative;
+    left:150px;
+   top:100px;
+    border: 1px solid #E1E8ED;
+   /* background-color: rgba(155, 180, 197, 1);*/
+     background-color: white;
+   
+    
+
   }
   .log-out{
   font-size: 20px;
   float:right;
-  color:rgba(248, 140, 93, 0.99);
+  color:white;
   text-decoration: none;
   font-family:"Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
-  max-width:60%;
   padding:8px;
-  text-indent: 12px; 
-  margin-right:4%;
-  margin-top: 0px;
+  margin-top: 10px;
+  width:15%;
+  margin-right: 0px;
  }
 
   .image_template2 img{ 
   width:320px;
   float:left;
-  margin-top: 20px;
-  margin-left:60px;
+  margin-top: 25px;
+  margin-left:20px;
   border: 1px solid white;
 }
 
-
-.logo  {
-  float:center;
-  margin-top: 12px;
-  max-width:10%;
-  margin:auto;
-}
-.logo img {
-width:60px;
-margin-top: 08px
-}
 .email{
   
   height: 30px;
@@ -146,10 +147,11 @@ margin-top: 08px
   position: relative;
   width:50px;
   cursor: pointer;
-  left:100px;
+  left:-40px;
   font-size: 25px;
-  top:200px;
+  top:-45px;
   font-weight: normal;
+  color: #539BB2;
 }
 .address:hover{
   color: #555459;
@@ -173,22 +175,22 @@ margin-top: 08px
 }
 .name{
   position: relative;
-  left: 50px;
+  left: 30px;
   line-height: 1;
    color:#23527C;
-  font-size: 20px;
+  font-size: 30px;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
-  bottom: 170px;
+  top: 40px;
   display: inline;
 }
 .image-delete{
   position: relative;
   font-weight: 700;
-  color:#337AB7;
+  color:#23527C;
   margin-left: 380px;
-  bottom: 370px;
-  font-size: 14px;
+  bottom: 20px;
+  font-size: 20px;
   float: left;
  
  }
@@ -208,11 +210,12 @@ margin-top: 08px
  }
 textarea.address-form{
 position: relative;
- left: -50px; 
- top: 30px;
- width:300px;
+  left: 0px; 
+  top: 40px;
+  width:250px;
   height: 40px;
   border: 1px solid white;
+  color: black;
   padding: 5px;
   font-family: Tahoma, sans-serif;
   font-weight: bold;
@@ -234,11 +237,12 @@ textarea[placeholder] {
  .date-label{
   position: relative;
    width:41px;
-   top:120px;
-   left:200px;
+   bottom:140px;
+   left:10px;
    font-size: 25px;
    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
    font-weight: normal;
+   color:#539BB2;
 
  }
 .bottom1{
@@ -247,85 +251,102 @@ textarea[placeholder] {
   bottom: 400px;
 }
 .map-image img{
-  width:40px;
+  width:45px;
   position: relative;
-  left:0px;
- top: 30px;
+  left:5px;
+ top: 0px;
 }
 .map{
+  height: 100px;
+  width:550px;
   position: relative;
-  height: 400px;
-  width:300px;
-   background-color:rgba(196, 196, 196, 0.12);
-  left:350px;
-  top:-140px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
-}
-.border{
-  position: relative;
- box-shadow: 0px 1px 1px rgba(248, 140, 93, 0.17), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12); 
- height: 400px;
- top: 30px;
- background-color: #E9EAED;
-   width:550px;
-}
-.date{
-   height: 400px;
-  width:300px;
-  position: relative;
-  left:860px;
-  top:100px;
-   background-color:rgba(196, 196, 196, 0.12);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
+  left:0px;
+  top:20px;
+  background-color: white;
+  border: 1px solid #539BB2;
+   border-radius: 5px 5px 0px 0px;
+/*  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
+*/}
 
+.date{
+  height: 100px;
+  width:550px;
+  position: relative;
+  left:80px;
+  top:100px;
+  border: 1px solid #539BB2;
+  background-color: white;
+   border-radius: 5px 5px 0px 0px;
+/*  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
+*/
 }
 .kindof-meal{
-  height: 400px;
-  width:300px;
+    height: 100px;
+  width:550px;
   position: relative;
-  left:160px;
-  top:-310px;
-   background-color:rgba(196, 196, 196, 0.12);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
-
+  left:0px;
+  top:10px;
+  border: 1px solid #539BB2 ;
+  border-radius: 5px 5px 0px 0px;
+/*  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
+*/
 }
-.date img {
+.calender img {
   width:40px;
   position: relative;
-  top:-80px;
+  top:10px;
+  left:110px;
+}
+.clock img {
+    width:60px;
+  position: relative;
+  bottom:40px;
+  left:385px;
 }
 .map-icon img{
-  width:50px;
+  width:45px;
   position: relative;
-  top:-50px;
-  left:0px;
+  top:-45px;
+  right:20px;
 }
 .meal-icon img{
-  width:40px;
+  width:45px;
   position: relative;
-  top:-70px;
+  bottom:0px;
 }
-.date h4{
-  font-size: 16px;
-  color:#292F33;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  position: relative;
-  top:-40px;
-  left:50px;
-}
+
 .map-image h4{
   font-size: 16px;
   color:#292F33;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   position: relative;
-  top:-95px;
+  top:-85px;
   left:50px;
 }
-.meal-icon h4{
-  font-size: 16px;
-  color:#292F33;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+.image_template8 img{
+  width:50px;
   position: relative;
-  top:-38px;
-  left:50px;
+  bottom:10px;
+  left:10px
+
+}
+#potlock_due_date_4i{
+  position: relative;
+    bottom: 50px;
+    left:270px;
+    font-size: 16px;
+}
+#potlock_due_date_5i{
+    position: relative;
+    bottom: 50px;
+    left:260px;
+    font-size: 16px;
+}
+.border{
+ border: 1px solid #E1E8ED;
+ left:150px;
+ top:100px;
+ width:800px;
+ background-color: white;
 }

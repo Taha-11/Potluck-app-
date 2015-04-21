@@ -3,7 +3,7 @@ class Friendship < ActiveRecord::Base
   belongs_to :user, :foreign_key => :user_id
   belongs_to :friend, :class_name => 'User', :foreign_key => :friend_id
   belongs_to :inverse_friend, :foreign_key => :inverse_friend_id
-  self.per_page = 6
+  self.per_page = 3
   validates :friend_id, uniqueness: {scope: :user_id}
 
   before_create :same_dude?

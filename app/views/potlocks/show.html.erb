@@ -1,91 +1,78 @@
-<div id= "bar">
+   <div class= "bar">
   <%=link_to "Log out", destroy_user_session_path, :method => :delete, class: "log-out" %>
-  <div class="profile-page">
-  <%= link_to image_tag("http://icons.iconarchive.com/icons/graphicloads/100-flat/256/phone-icon.png"), root_path %>
+  <%= link_to "my potlucks", potlocks_path, class: "myfriends-link" %>
 </div>
-  <div class="logo">
-     <img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpf1/v/t34.0-12/10994726_10155228223160080_1910018901_n.jpg?oh=022a318cf844d0ad92613278b4b3895a&oe=54FC9A12&__gda__=1425825603_f32d06e12ed46cfa197a10fe6b67f432">
+    <div class="invite-side">
+    <div class="the-name">
+      <%= current_user.full_name%>   
+  </div>
+    <div class="image_template6">
+       <% if current_user.image %>
+       <%= image_tag current_user.image.image.url(:thumb)  %>
+     <%end%>
+</div>
+    <div class ="the-form">
+      <div class="map" style='width: 200px;'>
+        <div id="map" style='width: 200px; height: 200px;'></div>
     </div>
-
+         <div class="the-potlucks-name">
+           <%= @potlock.create %> </br>
+    </div>
+       <div class="the-date">
+          <%= @potlock.due_date.strftime("%A %b %d %H:%M") %><br>
+  </div>
 </div>
-              <div class="invite-side">
-                 <div class="the-name">
-               <%= current_user.first_name%>   
-             </div>
-                 <div class="image_template6">
-          <% if current_user.image %>
-            <%= image_tag current_user.image.image.url(:thumb)  %>
-          <%end%>
-        </div>
-            <div class="headline">
-             <%= @potlock.create %> </br>
-           </div>
+      <div class ="the-meal">
+          <%= @potlock.meal %><br>
        </div>
-
-           <div class ="the-form">
-         <div  class="map" style='width: 200px;'>
-  <div id="map" style='width: 200px; height: 200px;'></div>
-</div>
-             <div class="the-potlucks-name">
-             <%= @potlock.create %> </br>
-          </div>
-             <div class="the-date">
-              <div class ="the-calender">
-                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR4S63ehZPnI90GfWoGEiLYvoOXckM1AkBsvvG6YkSodppgshjm">
-             <%= @potlock.due_date.strftime("%A %b %d %H:%M") %><br>
-           </div>
-         </div>
-          <div class ="the-meal">
-            <div class="the-meal-icon">
-              <img src="https://cdn3.iconfinder.com/data/icons/food-drink/512/Dining-512.png">
-             <%= @potlock.meal %><br>
-           </div>
-         </div>
-             <div class="the-address">
+    </div>
+           <div class="the-address">
              <%= @potlock.address %>
            </div>
       </div>
-           <div class="the-item-form">
-            <%= render partial: 'items/form', locals: {potlock: @potlock, item: Item.new}  %>
-            <%= render partial: 'comments/form', locals: { comment: @comment, potlock: @potlock  } %>
-            <% @potlock.comments.each do |comment| %>
-            <div class="comment">
-            <%= comment.comment %>
-               </div>
-            <div class"wakwa">
-            <%= comment.user.image if comment.user %>
-          </div>
-
-          </div>
-          
-            <% @potlock.items.each do |item| %>
-            <ul>
-              <div class="item">
-            <li>  <%= item.name %><br></li>
-          </div>
-          </ul>
-          <div class="delete-item">
-              <%=link_to "delete ",potlock_item_path(@potlock, item), method: :delete%>
-            </div>
-           <div class="select">
-              <%=link_to "select",claim_potlock_item_path(@potlock, item), method: :post%>
-            </div>
-            <div class="selected-by">
-              selected by: <%= item.user.try(:first_name) || '' %>
-              </div>
-            <%end %>
-            <% end %>
-          
-         <div class="delete-potluck">
-        <%= link_to "delete potlock",@potlock, method: :delete, class: "btn btn-default potlock-delete" %> 
+     <div class="the-item-form">
+      <%= render partial: 'items/form', locals: {potlock: @potlock, item: Item.new}  %>
+      <%= render partial: 'comments/form', locals: { comment: @comment, potlock: @potlock  } %>
+      <% @potlock.comments.each do |comment| %>
+      <div class="comment">
+      <%= comment.comment %>
+       <%=link_to "delete ",potlock_comment_path(@potlock, comment), method: :delete%>
+       
+        <p><%= comment.user.try(:full_name)%></p> 
+          <%= image_tag comment.user.image.image_url %>
       </div>
-   
+  </div>
+     <%end %>
+      <% @potlock.items.each do |item| %>
+      <ul>
+        <div class="item">
+      <li><%= item.name %><br></li> 
+    </div>
+    </ul>
+    <div class="delete-item">
+          <%=link_to "delete ",potlock_item_path(@potlock, item), method: :delete%>
+      </div>
+     <div class="select">
+           <%=link_to "select",claim_potlock_item_path(@potlock, item), method: :post%>
+      </div>
+       <div class="selected-by">
+        selected by: <%= item.user.try(:full_name) %>
+                     <%=item.user.try(:image)%>
+
+       
+        </div>
+  <% end %>
+    
+   <div class="delete-potluck">
+  <%= link_to "delete potlock",@potlock, method: :delete, class: "btn btn-default potlock-delete" %> 
+</div>
+
 
           <div class="friends-side2">
-  <% current_user.invites.each do |invite| %>
+  <% @potlock.invites.each do |invite| %>
              <div class="friend-name1">
-              <%= invite.guest.full_name%>
-              <%= invite.guest.email %>
+              <%#= invite.guest.full_name %>
+              <%#= invite.guest.email %>
             </div>
             <div class="image_template4">
                <% if invite.guest %>

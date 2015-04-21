@@ -1,9 +1,8 @@
 class InvitesController < ApplicationController
+
   def create 
      @potlock = Potlock.find params[:potlock_id]
-     @friendships= Friendship.all
-     @invite = current_user.invites.build(:guest_id=> params[:guest_id]) 
-     @invite.potlock = @potlock
+     @invite = @potlock.invites.build(:guest_id=> params[:guest_id]) 
     if @invite.save 
       # UserMailer.invitecreated_email(@invite).deliver
       redirect_to  @potlock
@@ -13,10 +12,11 @@ class InvitesController < ApplicationController
 end
 
 def destroy
-  @potlock = Potlock.find params[:potlock_id]
-  @invite = Invite.find(params[:id])
+   # @potlock = Potlock.find params[:potlock_id]
+   @invite = @potlock.invites.where(id: params[:id])[0] || 
+                    current_user.inverse_invites.find_by(guest_id: params[:invite_id])
   @invite.destroy
-  redirect_to @potlock
+  redirect_to potlocks_path
 end 
 
   def find

@@ -1,15 +1,19 @@
 class ItemsController < ApplicationController
-   def new
+   def show
    @potlock= Potlock.find(params[:potlock_id]) 
    @item = potlock.items.build
+   @image = Image.new
 end 
 
   def claim
+    # @image = Image.new
     @potlock = Potlock.find(params[:potlock_id])
     @item = Item.find(params[:id])
-    @item.user = current_user
+    @item.user_id = current_user.id
     @item.save
+
     redirect_to @potlock
+  
   end
 
 

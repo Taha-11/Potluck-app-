@@ -1,12 +1,18 @@
 class CommentsController < ApplicationController
   def show 
+    @users= User.all
     @potlock = Potlock.find(params[:potlock_id])
-    @commnet = potlock.comments.build 
+    @comment = potlock.comments.build 
+    @images = Image.all
+    @image = Image.new
   end 
 
   def create 
+     
+
     @potlock = Potlock.find(params[:potlock_id])
-    @comment = @potlock.comments.new(params.require(:comment).permit(:comment))
+    @comment = @potlock.comments.new(params.require(:comment).permit([:comment]))
+    @comment.user_id = current_user.id
     if @comment.save
        redirect_to @potlock
      else

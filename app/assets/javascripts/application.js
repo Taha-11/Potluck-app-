@@ -46,11 +46,16 @@ $(document).ready(function(){
   });
 
 $(document).ready(function(){
-  $(".friend-notification img").mouseenter(function(){
+  $(".friend-notification ").click(function(){
     $(".friends-requestes").slideDown("slow");
   });
 });
 
+$(document).ready(function(){
+  $(".notifications").mouseenter(function(){
+    $(".friends-requestes").fadeOut("slow");
+  });
+});
 
   
 

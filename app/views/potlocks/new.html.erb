@@ -1,16 +1,7 @@
-<div id= "bar">
+<div class= "bar">
   <%=link_to "Log out", destroy_user_session_path, :method => :delete, class: "log-out" %>
 </div>
 
-  <% current_user.inverse_friends.each do |inverse_friend| %>
-<% if !current_user.friends.exists?(inverse_friend)  %> 
-        <div class="image_template4">
-        <%=image_tag inverse_friend.image.image.url%>
-        <%= inverse_friend.full_name %>
-      </div>
-      <%= link_to "Accept", friendships_path(:friend_id => inverse_friend), :method => :post, class: "accept" %>
-         <%= link_to "Ignore", friendship_inverse_friendship_path(current_user, inverse_friend), :method => :delete  %>       
-   <% end %>
-  <% end %>
+
 
 

@@ -24,6 +24,12 @@ Rails.application.routes.draw do
       resources :inverse_friendships, :controller => 'friendships' 
    
  end 
+ resources :invites do
+    post :find, on: :collection
+      resources :inverse_invites, :controller => 'invites' 
+   
+ end 
+
 
   # resources :friendships, :collection => { :index => :get }
   resources :images

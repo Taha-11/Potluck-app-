@@ -22,16 +22,16 @@
 .map{
 
   position: relative;
-  left:50px;
+  left:650px;
   top:100px;
 }
   .image_template6 img { 
   width:200px;
   border-radius: 10px;
-   left:20px;
+   left:50px;
   border: 4px solid white;
   position: relative;
-  top: 30px;
+  top: -30px;
 }
 .the-address{
     position: relative;
@@ -50,15 +50,14 @@ bottom: 517px;
   left: 1290px;
   background-color:  rgba(248, 140, 93, 0.39);
   border-radius: 5px;
-  position: fixed;
-  z-index: 2;
+
 }
 .the-name{
   position: relative;
-  color:white;
+  color:black;
   font-size: 20px;
-  left:20px;
-  top:260px;
+  left:60px;
+  top:200px;
 }
 .the-calender img{
   position: relative;
@@ -71,7 +70,7 @@ bottom: 517px;
   font-size: 20px;
   color:#337AB7;
   bottom: 400px;
-  right:110px;
+  right:0px;
 }
 
 .the-meal-icon img{
@@ -116,9 +115,8 @@ textarea#item_name{
   top:80px;
   left:10px;
   height:380px;
-  background-color: #337AB7;
-  position: fixed;
-  z-index: 0;
+  
+
  }
   .headline{
   position: relative;
@@ -152,22 +150,19 @@ textarea#item_name{
   width:260px;
   bottom:320px;
   left:5px;
-  position: fixed;
-  z-index: 3;
-}
+ }
 .friends-to-invite h2{
   position: relative;
   bottom:240px;
   font-size: 20px;
   left:10px;
-  position: fixed;
+  
 }
  .invite-icon img {
   position: relative;
   width:70px;
   bottom: 225px;
   left:220px;
-  position: fixed;
 }
 
  .friends2{
@@ -176,7 +171,7 @@ textarea#item_name{
   height: 100px;
   width:290px;
   bottom: 50px;
-  position: fixed;
+
 }
 .invite-requeste{
   position: relative;
@@ -188,9 +183,9 @@ textarea#item_name{
 .item{
   position: relative;
   font-size: 20px;
-  left:390px;
-top: 100px;
-font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  left:0px;
+   top: 100px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
 .select{
   position: relative;
@@ -214,10 +209,9 @@ font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Ga
 }
 .delete-potluck{
   position: relative;
-  bottom:700px;
-  left:10px;
-  position: fixed;
-
+  bottom:0px;
+  left:500px;
+ 
 }
 .profile-page{
   font-size: 15px;
@@ -235,4 +229,8 @@ font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Ga
   position: relative;
   left:210px;
   top:20px;
+}
+.wakwak{
+  position: relative;
+  left:300px;
 }
