@@ -16,16 +16,16 @@ class User < ActiveRecord::Base
               :recoverable, :rememberable, :trackable, :validatable
          has_many :comments, through: :potlocks
          has_many :images
-         has_many :potlocks
-         has_many  :items
+         has_many :potlocks, :dependent => :destroy
+         has_many :items
          has_many :friendships
          has_many :invites 
          has_many :friends, :through => :friendships
          has_many :guests, :through => :invites
          has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id",:dependent => :destroy
          has_many :inverse_friends, :through => :inverse_friendships, :source => :user, :dependent => :destroy
-         has_many :inverse_invites, :class_name => "Invite", :foreign_key => "guest_id", :dependent => :destroy
-         has_many :inverse_guests, :through => :inverse_invites, :source => :user
+         has_many :inverse_invites,  :class_name => "Invite", :foreign_key => "guest_id", :dependent => :destroy
+         has_many :inverse_guests, :through => :inverse_invites, :source => :user, :dependent => :destroy
         
   #   def added_friends
   #   inverse_friends.joins(:friendships).where("friendships.friend_id = users.id and friendships.user_id = users.id").all
@@ -43,6 +43,10 @@ class User < ActiveRecord::Base
       def full_name
       "#{first_name} #{last_name}"
       end
+
+      # def search_by_full_name(search_term)
+      #   where('full_name like?', "%#{search_term}"%)
+      # end 
 
 
       def image

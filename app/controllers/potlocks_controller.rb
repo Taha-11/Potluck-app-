@@ -3,10 +3,10 @@ class PotlocksController < ApplicationController
 	def index
     @friendships =Friendship.paginate(:page => params[:page], :per_page => 3)
 		@potlock = Potlock.new
-    @search_term = params[:friendship]
     @potlocks = Potlock.all
+    @search_term = params[:friendship]
     if @search_term
-		  @users = User.where('first_name iLIKE ? OR last_name iLIKE ?', "%#{@search_term}%", "%#{@search_term}%")
+		  @users = User.where("LOWER(first_name || ' ' || last_name) LIKE ?", "%#{@search_term}%")
     else
       @users = []
     end
@@ -41,7 +41,7 @@ end
 
 	 def create
 	 	potlock_params= params.require(:potlock).permit(:create,:due_date,:meal,:address, :longtitude, :latitude)
-	 	@potlock =Potlock.new potlock_params
+	 	@potlock = current_user.potlocks.new potlock_params
     @potlock.user_id = current_user.id
 	 	if @potlock.save
 	 		redirect_to @potlock

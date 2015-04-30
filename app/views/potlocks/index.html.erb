@@ -44,13 +44,13 @@
       <div class="friends-count">
          <img src ="http://img1.wikia.nocookie.net/__cb20140213102334/the-enigma-corporation/images/a/ae/Users-Group-icon.png">
         <%= link_to "See all friends", new_potlock_path, class: "myfriends-link" %>
-         <% @potlocks.each do |p| %>
+       
+         <% current_user.potlocks.each do |p| %>
       <%= link_to p.create, potlock_path(p) %>
         <!-- <div class="image_template5">
          <%#= image_tag current_user.image.image.url(:thumb) %>
        </div> -->
-    <% end %>
-
+   <%end%>
         <%= current_user.friends.count %>  
   <div>
   </div>
@@ -194,8 +194,10 @@ Add your photo
            <div class="create">
           <h4> Create a new potluck </h4>
                   <div class="image_template8">
+                    <% if current_user.image %>
         <%= image_tag current_user.image.image.url(:thumb)%>
       </div>
+      <%end%>
              <%=f.text_area :create, id: "create", placeholder: "Name your potluck" %>
   </div>
      <div class="date">
@@ -253,25 +255,26 @@ Add your photo
    </div>
 
 
+
    <% current_user.inverse_guests.each do |inverse_guest| %>
 <%# if !current_user.friends.exists?(inverse_friend)  %> 
          
-     
-        <%=image_tag inverse_guest.image.image.url%>
-
-      
+              <div class="image_template7">
+        <%=image_tag inverse_guest.image.image.url%> 
+      </div>
        
         <%= inverse_guest.full_name %>
       </div>
+
+      <% if Invite.find_potlock(inverse_guest.id, current_user.id) != nil  %>
      
-    
-      <%= link_to "Accept", invites_path(:guest_id => inverse_guest), :method => :post %>
-    
-         <%= link_to "Ignore", invite_inverse_invite_path(current_user, inverse_guest), :method => :delete, class: "ignore" %>  
+      <%= link_to "Accept", potlock_path(Invite.find_potlock(inverse_guest.id, current_user.id).potlock_id) %>
+    <%end%>
+         <%#= link_to "Ignore", invite, :method => :delete, class: "ignore" %>  
         
             <h4> invitees </h4>
           
-              <%= inverse_guest.friends.count %>
+              <%#= inverse_invite.friends.count %>
               
    <% end %>
   <%# end %>

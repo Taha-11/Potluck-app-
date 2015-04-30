@@ -17,9 +17,9 @@ class FriendshipsController < ApplicationController
   end
 
 
-  def find
-    @friends = User.joins(:friendships).where('users.first_name iLIKE ?', "%#{params[:friendship]}%")
-    # @friends = current_user.friendships.search(params[:friendship])
-  end 
+  # def find
+  #   @friends = User.joins(:friendships).where('users.first_name iLIKE ?', "%#{params[:friendship]}%")
+  #   # @friends = current_user.friendships.search(params[:friendship])
+  # end 
 end
 

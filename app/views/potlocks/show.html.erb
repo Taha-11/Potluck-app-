@@ -69,10 +69,11 @@
 
 
           <div class="friends-side2">
+            
   <% @potlock.invites.each do |invite| %>
              <div class="friend-name1">
-              <%#= invite.guest.full_name %>
-              <%#= invite.guest.email %>
+              <%= invite.guest.full_name %>
+              <%= invite.guest.email %>
             </div>
             <div class="image_template4">
                <% if invite.guest %>
@@ -81,6 +82,7 @@
            </div>
               <%= link_to "delete invitation",[@potlock,invite], :method => :delete, class: "unfriend" %></br>
       <%end %> 
+    
     <div class="friends-icon3">
       <div class="invitees">
       <h4> invitees </h4>
